@@ -54,13 +54,16 @@ const LoginForm = () => {
     <>
       <section className="bg-slate-800/60 backdrop-blur-md border border-white/10 lg:w-6/10 mx-auto p-8 rounded-3xl my-12 lg:my-0 shadow-2xl shadow-black/20">
         <div className=" text-center space-y-3 py-3">
-          <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500/20 via-purple-500/20 to-pink-500/20 mb-2 border border-white/5">
+          <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-linear-to-br from-blue-500/20 via-purple-500/20 to-pink-500/20 mb-2 border border-white/5">
             <HiOutlineSparkles className="text-2xl text-blue-400" />
           </div>
           <h2 className="text-3xl font-bold text-white">Welcome Back</h2>
           <span className="text-slate-400">
             Don't have an account?
-            <Link className="text-blue-400 ml-2 hover:text-blue-300 font-medium transition-colors" to={"/auth/register"}>
+            <Link
+              className="text-blue-400 ml-2 hover:text-blue-300 font-medium transition-colors"
+              to={"/auth/register"}
+            >
               Sign Up
             </Link>
           </span>
@@ -86,7 +89,9 @@ const LoginForm = () => {
           <div className="absolute inset-0 flex items-center">
             <div className="w-full border-t border-white/10"></div>
           </div>
-          <span className="relative z-10 bg-slate-800/0 px-4 text-sm text-slate-500 font-medium bg-[#1e293b]">or continue with email</span>
+          <span className="relative z-10 bg-slate-800/0 px-4 text-sm text-slate-500 font-medium ">
+            or continue with email
+          </span>
         </div>
 
         <form
@@ -108,8 +113,10 @@ const LoginForm = () => {
             classNames={{
               label: "!text-slate-300 mb-2",
               input: "text-white group-data-[has-value=true]:text-white",
-              inputWrapper: "bg-slate-900/50 border-white/10 data-[hover=true]:border-blue-500/50 group-data-[focus=true]:border-blue-500",
+              inputWrapper:
+                "bg-slate-900/50 border-white/10 data-[hover=true]:border-blue-500/50 group-data-[focus=true]:border-blue-500",
               innerWrapper: "bg-transparent",
+              clearButton: "text-slate-500",
             }}
           />
           <Input
@@ -143,13 +150,14 @@ const LoginForm = () => {
             classNames={{
               label: "!text-slate-300 mb-2",
               input: "text-white group-data-[has-value=true]:text-white",
-              inputWrapper: "bg-slate-900/50 border-white/10 data-[hover=true]:border-blue-500/50 group-data-[focus=true]:border-blue-500",
+              inputWrapper:
+                "bg-slate-900/50 border-white/10 data-[hover=true]:border-blue-500/50 group-data-[focus=true]:border-blue-500",
             }}
           />
 
           <Button
             type="submit"
-            className="w-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white font-bold text-lg shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 hover:scale-[1.02] transition-all py-6 mt-2"
+            className="w-full bg-linear-to-r from-blue-500 via-purple-500 to-pink-500 text-white font-bold text-lg  hover:scale-[1.02] transition-all py-6 mt-4 disabled:opacity-30"
             size="lg"
             disabled={isLoading || !isValid}
             isLoading={isLoading}
