@@ -6,9 +6,13 @@ import LoginPage from "./Pages/Auth/LoginPage";
 import RegisterPage from "./Pages/Auth/RegisterPage";
 import AuthLayout from "./Components/Layouts/AuthLayout";
 import MainLayout from "./Components/Layouts/MainLayout";
-import { Bounce, ToastContainer } from "react-toastify";
 import MainProtectedRoute from "./Components/MainProtectedRoute";
 import AuthProtectedRoute from "./Components/Auth/AuthProtectedRoute";
+import PostDetailsPage from "./Pages/PostDetails/PostDetailsPage";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+
+export let queryClient = new QueryClient();
+
 function App() {
   const routers = createBrowserRouter([
     {
@@ -20,6 +24,22 @@ function App() {
           element: (
             <MainProtectedRoute>
               <HomePage />
+            </MainProtectedRoute>
+          ),
+        },
+        {
+          path: "/post-details/:id",
+          element: (
+            <MainProtectedRoute>
+              <PostDetailsPage />
+            </MainProtectedRoute>
+          ),
+        },
+        {
+          path: "/post-details",
+          element: (
+            <MainProtectedRoute>
+              <PostDetailsPage />
             </MainProtectedRoute>
           ),
         },
@@ -61,20 +81,9 @@ function App() {
   ]);
   return (
     <>
-      <ToastContainer
-        position="top-right"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick={false}
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="colored"
-        transition={Bounce}
-      />
-      <RouterProvider router={routers} />
+      <QueryClientProvider client={queryClient}>
+        <RouterProvider router={routers} />
+      </QueryClientProvider>
     </>
   );
 }
