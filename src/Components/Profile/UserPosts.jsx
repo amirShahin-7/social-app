@@ -5,7 +5,6 @@ import PostCardSkeleton from "../Feed/Skeletons/PostCardSkeleton";
 import { BsArchive } from "react-icons/bs";
 
 const UserPosts = () => {
-  const { data: userData } = useUserData();
   const { data: posts, isLoading: postsLoading } = useUserPosts();
   if (postsLoading) {
     return <PostCardSkeleton />;
@@ -26,12 +25,9 @@ const UserPosts = () => {
       {posts?.length > 0 &&
         posts
           ?.map((postInfo) => (
-            <PostCard
-              userData={userData}
-              postInfo={postInfo}
-              key={postInfo?._id}
-            />
-          ))?.reverse()}
+            <PostCard postInfo={postInfo} key={postInfo?._id} />
+          ))
+          ?.reverse()}
     </>
   );
 };

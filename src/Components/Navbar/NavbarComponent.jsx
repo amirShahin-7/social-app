@@ -6,7 +6,6 @@ import NavbarWelcome from "./NavbarWelcome";
 import NavbarActions from "./NavbarActions";
 import NavbarProfileDropdown from "./NavbarProfileDropdown";
 import { useUserData } from "../../hooks/useUserData";
-import { useQueryClient } from "@tanstack/react-query";
 
 const NavbarComponent = () => {
   const { setToken } = useContext(AuthContext);

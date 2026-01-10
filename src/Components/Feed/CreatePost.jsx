@@ -81,7 +81,8 @@ const CreatePost = () => {
             onChange={(e) => setContent(e.target.value)}
             classNames={{
               input: "text-base text-white",
-              inputWrapper: "bg-slate-900/50 border-white/10 hover:border-white/20 rounded-xl",
+              inputWrapper:
+                "bg-slate-900/50 border-white/10 hover:border-white/20 rounded-xl",
             }}
           />
         </div>
@@ -119,7 +120,7 @@ const CreatePost = () => {
           {/* Submit Button */}
           <Button
             type="submit"
-            isLoading={isPending} 
+            isLoading={isPending}
             disabled={(!content.trim() && !image) || isPending}
             color="primary"
             size="md"

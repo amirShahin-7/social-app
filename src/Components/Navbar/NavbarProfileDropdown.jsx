@@ -12,11 +12,11 @@ const NavbarProfileDropdown = ({ userData, onLogout }) => {
   return (
     <Dropdown placement="bottom-end" className="mt-2">
       <DropdownTrigger>
-        <div className="relative cursor-pointer group">
+        <div className="relative group">
           <Avatar
             isBordered
             as="button"
-            className="transition-all duration-300 ring-2 ring-offset-2 ring-offset-slate-900 ring-purple-500/50 group-hover:ring-purple-400 group-hover:scale-105"
+            className="transition-all duration-300 ring-2 ring-offset-2 ring-offset-slate-900 ring-purple-500/50 group-hover:ring-purple-400 group-hover:scale-105 cursor-pointer"
             color="secondary"
             size="md"
             radius="full"

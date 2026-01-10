@@ -1,9 +1,12 @@
 import { Avatar } from "@heroui/react";
+import CommentActions from "./Actions/CommentActions";
+import { useUserData } from "../../hooks/useUserData";
 
 const PostComments = ({ commentInfo }) => {
   const userImage = commentInfo?.commentCreator.photo.includes("undefined")
     ? null
     : commentInfo?.commentCreator.photo;
+  const { data: userData } = useUserData();
   return (
     <section
       key={commentInfo?.commentCreator._id}
@@ -11,11 +14,26 @@ const PostComments = ({ commentInfo }) => {
     >
       <Avatar src={userImage} size="sm" />
       <div className="flex-1">
-        <div className="bg-slate-800/50 backdrop-blur-sm rounded-2xl px-4 py-2.5 border border-white/10">
-          <p className="font-semibold text-sm text-white">
-            {commentInfo?.commentCreator.name}
-          </p>
-          <p className="text-slate-300 text-sm mt-0.5">{commentInfo?.content}</p>
+        <div className="bg-slate-800/50 backdrop-blur-sm rounded-2xl px-4 py-2.5 border border-white/10 flex justify-between">
+          {/* Comment Content */}
+          <div>
+            <p className="font-semibold text-sm text-white">
+              {commentInfo?.commentCreator.name}
+            </p>
+            <p className="text-slate-300 text-sm mt-0.5">
+              {commentInfo?.content}
+            </p>
+          </div>
+          {/* Comment Actions */}
+          {userData?._id == commentInfo?.commentCreator?._id && (
+            <div>
+              <CommentActions
+                key={commentInfo?._id}
+                commentId={commentInfo?._id}
+                commentContent={commentInfo?.content}
+              />
+            </div>
+          )}
         </div>
         <div className="flex items-center gap-4 mt-1.5 px-4 *:text-xs">
           <button className="text-slate-400 hover:text-blue-500 focus:text-blue-500 font-medium cursor-pointer">

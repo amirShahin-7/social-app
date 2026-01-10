@@ -12,6 +12,7 @@ import { BsCalendarCheck } from "react-icons/bs";
 import { RiEdit2Fill } from "react-icons/ri";
 import { HiOutlineMail } from "react-icons/hi";
 import { useUserData } from "../../hooks/useUserData";
+import { useUserPosts } from "../../hooks/usePosts";
 
 const SideBarProfile = () => {
   const {
@@ -21,6 +22,7 @@ const SideBarProfile = () => {
     error,
     refetch,
   } = useUserData();
+  const { data: userPosts } = useUserPosts();
 
   const formatDate = (dateString) => {
     return new Date(dateString).toLocaleDateString("en-US", {
@@ -76,7 +78,7 @@ const SideBarProfile = () => {
         <div className="sticky top-24">
           <div className="bg-slate-800/60 backdrop-blur-md border border-white/10 rounded-3xl shadow-xl overflow-hidden">
             {/* Cover/Header Section */}
-            <div className="relative h-28 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
+            <div className="relative h-28 bg-linear-to-r from-indigo-500 via-purple-500 to-pink-500">
               <div className="absolute inset-0 bg-black/10"></div>
               {/* Decorative circles */}
               <div className="absolute top-2 right-4 w-16 h-16 bg-white/10 rounded-full blur-xl"></div>
@@ -86,7 +88,7 @@ const SideBarProfile = () => {
             {/* Avatar Section */}
             <div className="relative px-5 pb-5">
               <div className="absolute -top-12 left-1/2 transform -translate-x-1/2">
-                <div className="p-1 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-full shadow-lg">
+                <div className="p-1 bg-linear-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-full shadow-lg">
                   <div className="p-1 bg-slate-800 rounded-full">
                     <Avatar src={user.photo} className="w-20 h-20" isBordered />
                   </div>
@@ -123,6 +125,12 @@ const SideBarProfile = () => {
                     {calcAge(user.dateOfBirth)}
                   </p>
                   <p className="text-xs text-slate-400">Years Old</p>
+                </div>
+                <div>
+                  <p className="text-lg font-bold text-indigo-400">
+                    {userPosts?.length ? userPosts?.length : 0}
+                  </p>
+                  <p className="text-xs text-slate-400">Posts</p>
                 </div>
                 <div>
                   <p className="text-lg font-bold text-pink-400">
@@ -201,7 +209,7 @@ const SideBarProfile = () => {
 
               {/* Edit Profile Button */}
               <div className="mt-4">
-                <button className="w-full py-2.5 px-4 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white font-semibold text-sm rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer">
+                <button className="w-full py-2.5 px-4 bg-linear-to-r from-indigo-500 via-purple-500 to-pink-500 text-white font-semibold text-sm rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer">
                   <RiEdit2Fill />
                   Edit Profile
                 </button>

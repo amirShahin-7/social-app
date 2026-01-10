@@ -27,7 +27,7 @@ export const useUserPosts = () => {
   const { data: userData } = useUserData();
 
   return useApi({
-    queryKey: ["user-posts", userData?._id],
+    queryKey: ["user-posts"],
     queryFn: () => getUserPosts(userData?._id),
     select: (data) => data?.data?.posts,
     enabled: !!userData?._id,
