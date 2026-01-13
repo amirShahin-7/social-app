@@ -124,8 +124,9 @@ const RegisterForm = () => {
             startContent={<FaUser className="text-slate-400" />}
             size="lg"
             classNames={{
-              label: "!text-slate-300 mb-2",
-              input: "text-white group-data-[has-value=true]:text-green-300",
+              label: "!text-slate-300 mb-2 valid:text-green-300",
+              input:
+                "group-data-[has-value=true]:text-green-300 [&:-webkit-autofill]:[-webkit-text-fill-color:white]",
               inputWrapper:
                 "bg-slate-900/50 border-white/10 data-[hover=true]:border-blue-500/50 group-data-[focus=true]:border-blue-500",
               clearButton: "text-slate-500",
@@ -145,7 +146,8 @@ const RegisterForm = () => {
             size="lg"
             classNames={{
               label: "!text-slate-300 mb-2",
-              input: "text-white group-data-[has-value=true]:text-green-300",
+              input:
+                "group-data-[has-value=true]:text-green-300 [&:-webkit-autofill]:[-webkit-text-fill-color:white]",
               inputWrapper:
                 "bg-slate-900/50 border-white/10 data-[hover=true]:border-blue-500/50 group-data-[focus=true]:border-blue-500",
               clearButton: "text-slate-500",
@@ -179,7 +181,8 @@ const RegisterForm = () => {
               size="lg"
               classNames={{
                 label: "!text-slate-300 mb-2",
-                input: "text-white group-data-[has-value=true]:text-green-300",
+                input:
+                  "group-data-[has-value=true]:text-green-300 [&:-webkit-autofill]:[-webkit-text-fill-color:white]",
                 inputWrapper:
                   "bg-slate-900/50 border-white/10 data-[hover=true]:border-blue-500/50 group-data-[focus=true]:border-blue-500",
               }}
@@ -197,11 +200,11 @@ const RegisterForm = () => {
               description={
                 rePassword && !errors.rePassword ? (
                   passwordsMatch ? (
-                    <span className="text-teal-400 text-xs flex items-center gap-1 mt-1">
+                    <span className="text-green-300 text-xs flex items-center gap-1 mt-1">
                       ✓ Match
                     </span>
                   ) : (
-                    <span className="text-orange-400 text-xs flex items-center gap-1 mt-1">
+                    <span className="text-red-500 text-xs flex items-center gap-1 mt-1">
                       ⚠ No match
                     </span>
                   )

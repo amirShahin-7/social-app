@@ -112,10 +112,12 @@ const LoginForm = () => {
             size="lg"
             classNames={{
               label: "!text-slate-300 mb-2",
-              input: "text-white group-data-[has-value=true]:text-white",
+              input:
+                "group-data-[has-value=true]:text-green-300 [&:-webkit-autofill]:[-webkit-text-fill-color:white]",
+
               inputWrapper:
-                "bg-slate-900/50 border-white/10 data-[hover=true]:border-blue-500/50 group-data-[focus=true]:border-blue-500",
-              innerWrapper: "bg-transparent",
+                "bg-slate-900/50 border-white/10 data-[hover=true]:border-blue-500/50 group-data-[focus=true]:border-blue-500 ",
+              innerWrapper: "bg-transparent ",
               clearButton: "text-slate-500",
             }}
           />
@@ -126,7 +128,8 @@ const LoginForm = () => {
             {...register("password")}
             isInvalid={Boolean(errors.password)}
             errorMessage={errors.password?.message}
-            variant="faded"
+            variant="bordered"
+            color="primary"
             placeholder="Enter your password"
             startContent={<FaLock className="text-slate-400" />}
             endContent={
@@ -149,7 +152,8 @@ const LoginForm = () => {
             size="lg"
             classNames={{
               label: "!text-slate-300 mb-2",
-              input: "text-white group-data-[has-value=true]:text-white",
+              input:
+                "group-data-[has-value=true]:text-green-300 [&:-webkit-autofill]:[-webkit-text-fill-color:white]",
               inputWrapper:
                 "bg-slate-900/50 border-white/10 data-[hover=true]:border-blue-500/50 group-data-[focus=true]:border-blue-500",
             }}

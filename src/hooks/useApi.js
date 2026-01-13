@@ -4,8 +4,8 @@ export const useApi = ({
   queryFn,
   select,
   enabled,
-  staleTime = 500000,
-  cacheTime = 1000000,
+  staleTime = 10000,
+  cacheTime = 100000,
   refetchInterval,
   ...options
 }) => {
