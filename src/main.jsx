@@ -7,9 +7,7 @@ import { Bounce, ToastContainer } from "react-toastify";
 import AuthContextProvider from "./Context/AuthContext";
 import { createHead, UnheadProvider } from "@unhead/react/client";
 
-const head = createHead({
-  /* config */
-});
+const head = createHead({});
 
 createRoot(document.getElementById("root")).render(
   <HeroUIProvider>

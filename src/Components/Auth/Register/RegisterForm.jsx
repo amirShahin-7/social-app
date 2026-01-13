@@ -17,6 +17,7 @@ import { AuthContext } from "../../../Context/AuthContext";
 import { schema } from "../AuthSchema";
 import { authAPI } from "../../../Services/authServices";
 import { HiOutlineSparkles } from "react-icons/hi2";
+import { isDirty } from "zod/v3";
 
 const RegisterForm = () => {
   const { isLoading, setIsLoading, showPass, setShowPass } =
@@ -30,7 +31,7 @@ const RegisterForm = () => {
     trigger,
     control,
 
-    formState: { errors, isValid, touchedFields },
+    formState: { errors, isValid, touchedFields, isDirty },
   } = useForm({
     defaultValues: {
       name: "",
@@ -256,7 +257,11 @@ const RegisterForm = () => {
               className="flex-1"
               classNames={{
                 label: "!text-slate-300 mb-2",
-                input: "text-white group-data-[has-value=true]:text-green-300",
+                input: `text-slate-500 ${
+                  !errors?.dateOfBirth?.message &&
+                  isDirty &&
+                  "group-data-[has-value=true]:text-green-300"
+                }`,
                 inputWrapper:
                   "bg-slate-900/50 border-white/10 data-[hover=true]:border-blue-500/50 group-data-[focus=true]:border-blue-500",
                 clearButton: "text-slate-500",
