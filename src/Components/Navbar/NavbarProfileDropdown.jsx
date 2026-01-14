@@ -6,6 +6,7 @@ import {
   Avatar,
 } from "@heroui/react";
 import { HiOutlineUser, HiOutlineArrowRightOnRectangle } from "react-icons/hi2";
+import { IoSettingsOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
 
 const NavbarProfileDropdown = ({ userData, onLogout }) => {
@@ -60,6 +61,17 @@ const NavbarProfileDropdown = ({ userData, onLogout }) => {
         >
           <Link to="/profile" className="block w-full">
             My Profile
+          </Link>
+        </DropdownItem>
+
+        <DropdownItem
+          key="settings"
+          textValue="settings"
+          startContent={<IoSettingsOutline className="text-lg text-gray-500" />}
+          className="py-3 text-slate-200 hover:bg-white/10 rounded-lg transition-colors"
+        >
+          <Link to="/settings" className="block w-full">
+            Settings
           </Link>
         </DropdownItem>
 
