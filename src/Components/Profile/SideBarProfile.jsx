@@ -13,6 +13,7 @@ import { RiEdit2Fill } from "react-icons/ri";
 import { HiOutlineMail } from "react-icons/hi";
 import { useUserData } from "../../hooks/useUserData";
 import { useUserPosts } from "../../hooks/usePosts";
+import { Link } from "react-router-dom";
 
 const SideBarProfile = () => {
   const {
@@ -209,10 +210,13 @@ const SideBarProfile = () => {
 
               {/* Edit Profile Button */}
               <div className="mt-4">
-                <button className="w-full py-2.5 px-4 bg-linear-to-r from-indigo-500 via-purple-500 to-pink-500 text-white font-semibold text-sm rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer">
+                <Link
+                  to="/settings"
+                  className="w-full py-2.5 px-4 bg-linear-to-r from-indigo-500 via-purple-500 to-pink-500 text-white font-semibold text-sm rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer"
+                >
                   <RiEdit2Fill />
                   Edit Profile
-                </button>
+                </Link>
               </div>
             </div>
           </div>

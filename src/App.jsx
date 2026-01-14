@@ -10,6 +10,7 @@ import MainProtectedRoute from "./Components/MainProtectedRoute";
 import AuthProtectedRoute from "./Components/Auth/AuthProtectedRoute";
 import PostDetailsPage from "./Pages/PostDetails/PostDetailsPage";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import ProfileSettingPage from "./Pages/Profile/ProfileSettingPage";
 
 export let queryClient = new QueryClient();
 
@@ -48,6 +49,14 @@ function App() {
           element: (
             <MainProtectedRoute>
               <ProfilePage />
+            </MainProtectedRoute>
+          ),
+        },
+        {
+          path: "/settings",
+          element: (
+            <MainProtectedRoute>
+              <ProfileSettingPage />
             </MainProtectedRoute>
           ),
         },

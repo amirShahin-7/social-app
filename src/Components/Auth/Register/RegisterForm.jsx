@@ -17,7 +17,6 @@ import { AuthContext } from "../../../Context/AuthContext";
 import { schema } from "../AuthSchema";
 import { authAPI } from "../../../Services/authServices";
 import { HiOutlineSparkles } from "react-icons/hi2";
-import { isDirty } from "zod/v3";
 
 const RegisterForm = () => {
   const { isLoading, setIsLoading, showPass, setShowPass } =
@@ -30,8 +29,8 @@ const RegisterForm = () => {
     register,
     trigger,
     control,
-
-    formState: { errors, isValid, touchedFields, isDirty },
+    reset,
+    formState: { errors, isValid, touchedFields },
   } = useForm({
     defaultValues: {
       name: "",
@@ -56,6 +55,7 @@ const RegisterForm = () => {
     setIsLoading(false);
     if (res.message == "success") {
       toast.success(res.message);
+      reset();
       setTimeout(() => {
         navigate("/auth/login");
       }, 3000);
@@ -120,12 +120,13 @@ const RegisterForm = () => {
             isClearable={true}
             isInvalid={errors.name ? true : false}
             errorMessage={errors.name?.message}
-            variant="faded"
+            variant="bordered"
             placeholder="Enter your full name"
             startContent={<FaUser className="text-slate-400" />}
             size="lg"
+            color="white"
             classNames={{
-              label: "!text-slate-300 mb-2 valid:text-green-300",
+              label: "text-white/60 mb-2",
               input:
                 "group-data-[has-value=true]:text-green-300 [&:-webkit-autofill]:[-webkit-text-fill-color:white]",
               inputWrapper:
@@ -138,15 +139,16 @@ const RegisterForm = () => {
             label="Email Address"
             type="email"
             {...register("email")}
-            isInvalid={Boolean(errors.email)}
+            isInvalid={!!errors.email}
             errorMessage={errors.email?.message}
             isClearable={true}
-            variant="faded"
+            variant="bordered"
             placeholder="name@example.com"
             startContent={<IoIosMail className="text-slate-400 text-xl" />}
             size="lg"
+            color="white"
             classNames={{
-              label: "!text-slate-300 mb-2",
+              label: "text-white/60 mb-2",
               input:
                 "group-data-[has-value=true]:text-green-300 [&:-webkit-autofill]:[-webkit-text-fill-color:white]",
               inputWrapper:
@@ -161,11 +163,12 @@ const RegisterForm = () => {
               label="Password"
               type={showPass == false ? "password" : "text"}
               {...register("password")}
-              isInvalid={Boolean(errors.password)}
+              isInvalid={!!errors.password}
               errorMessage={errors.password?.message}
-              variant="faded"
+              variant="bordered"
               placeholder="Create password"
               startContent={<FaLock className="text-slate-400" />}
+              color="white"
               endContent={
                 showPass ? (
                   <FaEye
@@ -181,7 +184,7 @@ const RegisterForm = () => {
               }
               size="lg"
               classNames={{
-                label: "!text-slate-300 mb-2",
+                label: "text-white/60 mb-2",
                 input:
                   "group-data-[has-value=true]:text-green-300 [&:-webkit-autofill]:[-webkit-text-fill-color:white]",
                 inputWrapper:
@@ -194,10 +197,10 @@ const RegisterForm = () => {
               label="Confirm Password"
               type={showRePass == false ? "password" : "text"}
               {...register("rePassword")}
-              isInvalid={Boolean(
-                errors.rePassword ||
-                  (touchedFields.rePassword && !passwordsMatch && true)
-              )}
+              isInvalid={
+                !!errors.rePassword ||
+                (touchedFields.rePassword && !passwordsMatch && true)
+              }
               description={
                 rePassword && !errors.rePassword ? (
                   passwordsMatch ? (
@@ -225,12 +228,13 @@ const RegisterForm = () => {
                   />
                 )
               }
-              variant="faded"
+              variant="bordered"
               placeholder="Confirm password"
               startContent={<FaLock className="text-slate-400" />}
               size="lg"
+              color="white"
               classNames={{
-                label: "!text-slate-300 mb-2",
+                label: "text-white/60 mb-2",
                 input: "text-white group-data-[has-value=true]:text-green-300",
                 inputWrapper:
                   "bg-slate-900/50 border-white/10 data-[hover=true]:border-blue-500/50 group-data-[focus=true]:border-blue-500",
@@ -248,20 +252,17 @@ const RegisterForm = () => {
                   trigger("dateOfBirth");
                 },
               })}
-              isInvalid={Boolean(errors.dateOfBirth)}
+              isInvalid={!!errors.dateOfBirth}
               errorMessage={errors.dateOfBirth?.message}
-              variant="faded"
+              variant="bordered"
               startContent={<FaBirthdayCake className="text-slate-400" />}
               size="lg"
+              color="white"
               isClearable={true}
               className="flex-1"
               classNames={{
-                label: "!text-slate-300 mb-2",
-                input: `text-slate-500 ${
-                  !errors?.dateOfBirth?.message &&
-                  isDirty &&
-                  "group-data-[has-value=true]:text-green-300"
-                }`,
+                label: "text-white/60 mb-2",
+                input: `text-white/60`,
                 inputWrapper:
                   "bg-slate-900/50 border-white/10 data-[hover=true]:border-blue-500/50 group-data-[focus=true]:border-blue-500",
                 clearButton: "text-slate-500",
@@ -271,18 +272,20 @@ const RegisterForm = () => {
               aria-label="Gender"
               label="Gender"
               {...register("gender")}
-              isInvalid={Boolean(errors.gender)}
+              isInvalid={!!errors.gender}
               errorMessage={errors.gender?.message}
-              variant="faded"
+              variant="bordered"
               labelPlacement="outside"
               placeholder="Select gender"
               startContent={<FaVenusMars className="text-slate-400 text-lg" />}
               size="lg"
+              color="white"
               isClearable={true}
               className="flex-1"
               classNames={{
-                label: "!text-slate-300 mb-2",
-                value: "text-white group-data-[has-value=true]:text-green-300",
+                label: "text-white/60 mb-2",
+                value:
+                  "text-white/60 group-data-[has-value=true]:text-green-300",
                 trigger:
                   "bg-slate-900/50 border-white/10 data-[hover=true]:border-blue-500/50 group-data-[focus=true]:border-blue-500",
                 popoverContent:

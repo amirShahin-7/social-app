@@ -51,3 +51,20 @@ export const loginSchema = zod.object({
       "Password must be at least 8 characters long and include uppercase, lowercase, number, and special character"
     ),
 });
+
+export const profileSchema = zod.object({
+  password: zod
+    .string()
+    .nonempty("Password is required")
+    .regex(
+      /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/,
+      "Password must be at least 8 characters long and include uppercase, lowercase, number, and special character"
+    ),
+  newPassword: zod
+    .string()
+    .nonempty("New Password is required")
+    .regex(
+      /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/,
+      "Password must be at least 8 characters long and include uppercase, lowercase, number, and special character"
+    ),
+});

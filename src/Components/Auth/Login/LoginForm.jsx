@@ -18,7 +18,12 @@ const LoginForm = () => {
     useContext(AuthContext);
   const navigate = useNavigate();
 
-  const form = useForm({
+  const {
+    handleSubmit,
+    register,
+    reset,
+    formState: { errors, isValid },
+  } = useForm({
     defaultValues: {
       email: "",
       password: "",
@@ -27,12 +32,6 @@ const LoginForm = () => {
     mode: "all",
     reValidateMode: "onChange",
   });
-  const {
-    handleSubmit,
-    register,
-
-    formState: { errors, isValid },
-  } = form;
 
   async function handleUser(values) {
     setIsLoading(true);
@@ -42,6 +41,7 @@ const LoginForm = () => {
       localStorage.setItem("userToken", res.token);
       setToken(res.token);
       toast.success("Welcome back!");
+      reset();
       queryClient.invalidateQueries();
       setTimeout(() => {
         navigate("/");
@@ -103,21 +103,21 @@ const LoginForm = () => {
             label="Email Address"
             type="email"
             {...register("email")}
-            isInvalid={Boolean(errors.email)}
+            isInvalid={!!errors.email}
             errorMessage={errors.email?.message}
             isClearable={true}
-            variant="faded"
+            variant="bordered"
             placeholder="name@example.com"
             startContent={<IoIosMail className="text-slate-400 text-xl" />}
             size="lg"
+            color="white"
             classNames={{
-              label: "!text-slate-300 mb-2",
+              label: "text-white/60 mb-2",
               input:
                 "group-data-[has-value=true]:text-green-300 [&:-webkit-autofill]:[-webkit-text-fill-color:white]",
 
               inputWrapper:
                 "bg-slate-900/50 border-white/10 data-[hover=true]:border-blue-500/50 group-data-[focus=true]:border-blue-500 ",
-              innerWrapper: "bg-transparent ",
               clearButton: "text-slate-500",
             }}
           />
@@ -126,10 +126,9 @@ const LoginForm = () => {
             label="Password"
             type={showPass == false ? "password" : "text"}
             {...register("password")}
-            isInvalid={Boolean(errors.password)}
+            isInvalid={!!errors.password}
             errorMessage={errors.password?.message}
             variant="bordered"
-            color="primary"
             placeholder="Enter your password"
             startContent={<FaLock className="text-slate-400" />}
             endContent={
@@ -150,8 +149,9 @@ const LoginForm = () => {
               )
             }
             size="lg"
+            color="white"
             classNames={{
-              label: "!text-slate-300 mb-2",
+              label: "text-white/60 mb-2",
               input:
                 "group-data-[has-value=true]:text-green-300 [&:-webkit-autofill]:[-webkit-text-fill-color:white]",
               inputWrapper:

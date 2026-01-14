@@ -1,7 +1,9 @@
-import { apiGet } from "./apiService";
+import { apiGet, apiPut } from "./apiService";
 
 export const getUserData = () => apiGet("/users/profile-data");
 
-// export const updateUserProfile = (data) => apiPut("/users/upload-photo", photo);
+export const uploadPhoto = (formData) =>
+  apiPut("/users/upload-photo", formData);
 
-export const getUserPosts = (userId) => apiGet(`/users/${userId}/posts?limit=80`);
+export const getUserPosts = (userId) =>
+  apiGet(`/users/${userId}/posts?limit=80`);
