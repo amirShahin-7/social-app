@@ -26,16 +26,18 @@ const ProfilePage = () => {
         <main className="flex-1 min-w-0">
           <CreatePost />
 
-          <div className="bg-slate-800/60 backdrop-blur-md border border-white/10 rounded-2xl flex flex-wrap items-center justify-between shadow-lg p-6 my-6">
-            <h2 className="text-xl font-bold text-white flex items-center gap-3">
-              <span className="w-10 h-10 bg-linear-to-r from-indigo-500 to-purple-500 rounded-xl flex items-center justify-center shadow-lg shadow-indigo-500/20">
+          <div className="theme-card flex flex-wrap items-center justify-between shadow-lg p-6 my-6 rounded-2xl">
+            <h2 className="text-xl font-bold theme-text-primary flex items-center gap-3">
+              <span className="w-10 h-10 bg-linear-to-r light:from-[#005acd] light:via-[#0093cb] light:to-[#005acd] dark:from-indigo-500 dark:to-purple-500 rounded-xl flex items-center justify-center shadow-lg shadow-indigo-500/20">
                 <BsNewspaper className="text-lg text-white" />
               </span>
-              My Posts
+              <span className="light:bg-linear-to-r light:from-[#005acd] light:via-[#0093cb] light:to-[#005acd] light:bg-clip-text light:text-transparent">
+                My Posts
+              </span>
             </h2>
             <Link
               to="/"
-              className="border border-blue-400/50 rounded-full px-4 py-2 text-blue-400 hover:bg-slate-800/10 hover:text-white transition-colors flex items-center gap-2 "
+              className="border border-blue-400/50 rounded-full px-4 py-2 text-blue-400 hover:bg-slate-800/10 dark:hover:bg-slate-800/10 light:hover:bg-blue-400/10 hover:text-blue-500 transition-colors flex items-center gap-2 "
             >
               <HiHome /> Back to Home
             </Link>

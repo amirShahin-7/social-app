@@ -10,15 +10,15 @@ import { useHead } from "@unhead/react";
 
 const HomePage = () => {
   const { data, isLoading, refetch, isError, error } = usePosts();
-useHead({
-  title: "Feed Page",
-  meta: [
-    {
-      name: "description",
-      content: "Welcome to our website",
-    },
-  ],
-});
+  useHead({
+    title: "Feed Page",
+    meta: [
+      {
+        name: "description",
+        content: "Welcome to our website",
+      },
+    ],
+  });
   return (
     <div className="container mx-auto px-4 lg:px-0 max-w-7xl">
       <div className="flex justify-center gap-6">
@@ -28,7 +28,7 @@ useHead({
           <CreatePost />
 
           <div className="flex items-center gap-3 mt-8">
-            <h2 className="text-2xl font-bold bg-linear-to-r from-white via-blue-100 to-white bg-clip-text text-transparent">
+            <h2 className="text-2xl font-bold bg-linear-to-r from-blue-400 via-blue-500 to-blue-600 dark:from-white dark:via-blue-100 dark:to-white bg-clip-text text-transparent">
               Latest Posts
             </h2>
             <div className="flex-1 h-px bg-linear-to-r from-blue-500/50 via-purple-500/30 to-transparent"></div>

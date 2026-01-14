@@ -93,12 +93,14 @@ const PostActions = ({ postInfo: { _id } }) => {
         ref={targetRef}
         isOpen={isOpen}
         onOpenChange={onOpenChange}
-        className="bg-slate-800/80 backdrop-blur-md rounded-2xl border border-white/10 p-6 shadow-sm hover:shadow-lg hover:scale-102 transition-all max-w-2/6"
+        className="dark:bg-slate-800/80 bg-white/40 backdrop-blur-md rounded-2xl border dark:border-white/10 border-slate-400 p-6 shadow-sm hover:shadow-lg hover:scale-102 transition-all max-w-2/6"
       >
         <ModalContent>
           {(onClose) => (
             <>
-              <ModalHeader className="text-white">Update a Post</ModalHeader>
+              <ModalHeader className="dark:text-white text-slate-700 font-bold">
+                Update a Post
+              </ModalHeader>
               <ModalBody>
                 <form
                   onSubmit={(e) => {
@@ -117,9 +119,9 @@ const PostActions = ({ postInfo: { _id } }) => {
                       value={content}
                       onChange={(e) => setContent(e.target.value)}
                       classNames={{
-                        input: "text-base text-white",
+                        input: "text-base dark:text-white text-slate-800",
                         inputWrapper:
-                          "bg-slate-900/50 border-white/10 hover:border-white/20 rounded-xl",
+                          "dark:bg-slate-900/50 bg-white/50 border-white/10 hover:border-white/20 rounded-xl",
                       }}
                     />
                   </div>
@@ -193,13 +195,13 @@ const PostActions = ({ postInfo: { _id } }) => {
         ref={targetRef}
         isOpen={isOpenDelete}
         onOpenChange={onOpenChangeDelete}
-        className="bg-slate-800/80 backdrop-blur-md rounded-2xl border border-white/10 p-6 shadow-sm hover:shadow-lg hover:scale-102 transition-all"
+        className="dark:bg-slate-800/80 bg-white/40 backdrop-blur-md rounded-2xl border border-white/10 p-6 shadow-sm hover:shadow-lg hover:scale-102 transition-all"
       >
         <ModalContent>
           {(onClose) => (
             <>
               <ModalBody>
-                <p className="text-white flex items-center gap-2">
+                <p className="dark:text-white text-slate-800 flex items-center gap-2">
                   Do you want to continue
                   <IoAlertOutline className="text-red-500 animate-blink" />
                 </p>
@@ -228,30 +230,30 @@ const PostActions = ({ postInfo: { _id } }) => {
         </ModalContent>
       </Modal>
 
-      <Dropdown className="bg-slate-800/60 backdrop-blur-md">
+      <Dropdown className="dark:bg-slate-800/60 bg-white/40 backdrop-blur-md">
         <DropdownTrigger>
           <Button
             isLoading={deletePending}
             className="bg-transparent outline-none"
           >
             {!deletePending && (
-              <HiOutlineDotsHorizontal className="text-white" />
+              <HiOutlineDotsHorizontal className="dark:text-white text-slate-900 size-6" />
             )}
           </Button>
         </DropdownTrigger>
         <DropdownMenu aria-label="Actions">
           <DropdownItem
             textValue="Edit Post"
-            className="text-white"
-            startContent={<FaRegEdit className="text-yellow-400" />}
+            className="dark:text-white text-slate-700"
+            startContent={<FaRegEdit className="text-yellow-500" />}
             onPress={onOpen}
           >
             Edit Post
           </DropdownItem>
           <DropdownItem
             textValue="Delete Post"
-            className="text-white"
-            startContent={<MdDeleteOutline className="text-red-400" />}
+            className="dark:text-white text-slate-700"
+            startContent={<MdDeleteOutline className="text-red-500" />}
             onPress={onOpenDelete}
           >
             Delete Post

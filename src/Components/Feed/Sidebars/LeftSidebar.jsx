@@ -23,12 +23,12 @@ const LeftSidebar = () => {
             <Link
               key={item.label}
               to={item.path}
-              className={`flex items-center gap-4 px-6 py-4 rounded-full transition-all duration-200 group hover:bg-slate-800/60 hover:text-white `}
+              className={`flex items-center gap-4 px-6 py-4 rounded-full transition-all duration-200 group hover:bg-slate-800/60 dark:hover:bg-slate-800/60 light:hover:bg-blue-500/10 hover:text-white `}
             >
-              <span className="text-slate-400 group-hover:text-blue-400 transition-colors">
+              <span className="text-slate-400 dark:text-slate-400 light:text-[#5c7a99] group-hover:text-blue-400 transition-colors">
                 {item.icon}
               </span>
-              <span className="text-slate-400 group-hover:text-white transition-colors">{item.label}</span>
+              <span className="text-slate-400 dark:text-slate-400 light:text-[#3d5a80] group-hover:text-blue-500 dark:group-hover:text-white transition-colors">{item.label}</span>
             </Link>
           );
         })}
@@ -36,8 +36,8 @@ const LeftSidebar = () => {
         {/* Create Post Button */}
         <div className="pt-4 px-2">
           <Button
-             className="w-full bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-bold text-lg py-7 rounded-full hover:scale-105"
-             startContent={<FaFeatherAlt className="text-xl" />}
+            className="w-full bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-bold text-lg py-7 rounded-full hover:scale-105"
+            startContent={<FaFeatherAlt className="text-xl" />}
           >
             Post
           </Button>

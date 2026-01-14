@@ -44,8 +44,8 @@ const UpdatePassword = () => {
   }
 
   return (
-    <div className="bg-slate-800/60 backdrop-blur-md border border-white/10 rounded-3xl shadow-xl overflow-hidden p-6 w-full mb-8 md:mb-0">
-      <h3 className="text-xl font-semibold text-white mb-6 border-b border-white/10 pb-4">
+    <div className="theme-card rounded-3xl shadow-xl overflow-hidden p-6 w-full mb-8 md:mb-0">
+      <h3 className="text-xl font-semibold theme-text-primary mb-6 border-b border-white/10 pb-4 light:bg-linear-to-r light:from-[#005acd] light:via-[#0093cb] light:to-[#005acd] light:bg-clip-text light:text-transparent">
         Change Password
       </h3>
 
@@ -61,11 +61,11 @@ const UpdatePassword = () => {
           variant="bordered"
           radius="full"
           size="lg"
-          color="white"
+          color="primary"
           classNames={{
-            label: "text-white",
-            inputWrapper: "bg-slate-900/50 border-blue-500 ",
-            input: "text-white",
+            label: "theme-text-primary light:bg-linear-to-r light:from-[#005acd] light:via-[#0093cb] light:to-[#005acd] light:bg-clip-text light:text-transparent",
+            inputWrapper: "bg-slate-900/50 dark:bg-slate-900/50 light:bg-white border-blue-500 ",
+            input: "theme-text-primary",
           }}
           startContent={<FaLock className="text-slate-500" />}
           endContent={
@@ -94,11 +94,11 @@ const UpdatePassword = () => {
           variant="bordered"
           radius="full"
           size="lg"
-          color="white"
+          color="primary"
           classNames={{
-            label: "text-white",
-            inputWrapper: "bg-slate-900/50 border-blue-500 ",
-            input: "text-white",
+            label: "theme-text-primary light:bg-linear-to-r light:from-[#005acd] light:via-[#0093cb] light:to-[#005acd] light:bg-clip-text light:text-transparent",
+            inputWrapper: "bg-slate-900/50 dark:bg-slate-900/50 light:bg-white border-blue-500 ",
+            input: "theme-text-primary",
           }}
           startContent={<FaLock className="text-slate-500" />}
           endContent={

@@ -56,7 +56,7 @@ const CommentActions = ({ commentId, commentContent }) => {
   return (
     <>
       <Modal
-        className="bg-slate-800/80 backdrop-blur-md rounded-2xl border border-white/10 p-6 shadow-sm hover:shadow-lg hover:scale-102 transition-all max-w-2/6"
+        className="dark:bg-slate-800/80 bg-white/30 backdrop-blur-md rounded-2xl border dark:border-white/10 border-slate-400 p-6 shadow-sm hover:shadow-lg hover:scale-102 transition-all max-w-2/6"
         isOpen={isOpen}
         placement="top-center"
         onOpenChange={onOpenChange}
@@ -77,7 +77,7 @@ const CommentActions = ({ commentId, commentContent }) => {
                   <Input
                     variant="bordered"
                     color="primary"
-                    className="text-white"
+                    className="dark:text-white text-slate-800 bg-white/40 rounded-2xl"
                     minLength={2}
                     disabled={editPending}
                     value={updatedContent}
@@ -87,7 +87,7 @@ const CommentActions = ({ commentId, commentContent }) => {
                   />
                 </ModalBody>
                 <ModalFooter>
-                  <Button color="danger" variant="flat" onPress={onClose}>
+                  <Button color="danger" variant="light" onPress={onClose}>
                     Close
                   </Button>
                   <Button
@@ -108,7 +108,7 @@ const CommentActions = ({ commentId, commentContent }) => {
           )}
         </ModalContent>
       </Modal>
-      <Dropdown className="bg-slate-800/60 backdrop-blur-md">
+      <Dropdown className="dark:bg-slate-800/60 bg-white/30 backdrop-blur-md">
         <DropdownTrigger>
           <Button
             className="bg-transparent outline-none"
@@ -116,23 +116,25 @@ const CommentActions = ({ commentId, commentContent }) => {
             isDisabled={deletePending}
           >
             <HiOutlineDotsHorizontal
-              className={`text-white  ${deletePending ? "hidden" : "block"}`}
+              className={`dark:text-white text-slate-800/80 size-5  ${
+                deletePending ? "hidden" : "block"
+              }`}
             />
           </Button>
         </DropdownTrigger>
         <DropdownMenu aria-label="Actions">
           <DropdownItem
             textValue="Edit Post"
-            className="text-white"
-            startContent={<FaRegEdit className="text-yellow-400" />}
+            className="dark:text-white text-slate-700"
+            startContent={<FaRegEdit className="text-yellow-500" />}
             onPress={onOpen}
           >
             Edit Post
           </DropdownItem>
           <DropdownItem
             textValue="Delete Post"
-            className="text-white"
-            startContent={<MdDeleteOutline className="text-red-400" />}
+            className="dark:text-white text-slate-700"
+            startContent={<MdDeleteOutline className="text-red-500" />}
             onPress={() => handleDelete(commentId)}
           >
             Delete Post

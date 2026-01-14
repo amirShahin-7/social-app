@@ -47,15 +47,23 @@ const CreatePost = () => {
   };
 
   return (
-    <section className="bg-slate-800/60 backdrop-blur-md rounded-2xl border border-white/10 p-6 shadow-sm hover:shadow-lg hover:scale-102 transition-all">
+    <section className="
+      bg-slate-800/60 dark:bg-slate-800/60 light:bg-white/80
+      backdrop-blur-md rounded-2xl 
+      border border-white/10 dark:border-white/10 light:border-[#6dd7fd]/30
+      p-6 
+      shadow-sm dark:shadow-sm light:shadow-[#005acd]/10
+      hover:shadow-lg dark:hover:shadow-lg light:hover:shadow-[#005acd]/20
+      hover:scale-102 transition-all
+    ">
       <header className="bg-transparent py-3">
         <div className="container mx-auto px-4 py-4">
           <div className="flex flex-wrap gap-2 items-center justify-between">
             <div>
-              <h2 className="text-lg font-bold text-white opacity-90">
+              <h2 className="text-lg font-bold text-white dark:text-white light:text-[#1e3a5f] opacity-90">
                 Create a Post
               </h2>
-              <p className="text-sm text-slate-400">
+              <p className="text-sm text-slate-400 dark:text-slate-400 light:text-[#5c7a99]">
                 Share your thoughts with your network
               </p>
             </div>
@@ -80,9 +88,9 @@ const CreatePost = () => {
             value={content}
             onChange={(e) => setContent(e.target.value)}
             classNames={{
-              input: "text-base text-white",
+              input: "text-base text-white dark:text-white light:text-[#1e3a5f]",
               inputWrapper:
-                "bg-slate-900/50 border-white/10 hover:border-white/20 rounded-xl",
+                "bg-slate-900/50 dark:bg-slate-900/50 light:bg-[#f5ffff]/80 border-white/10 dark:border-white/10 light:border-[#6dd7fd]/40 hover:border-white/20 dark:hover:border-white/20 light:hover:border-[#0093cb]/60 rounded-xl",
             }}
           />
         </div>
@@ -104,11 +112,16 @@ const CreatePost = () => {
         )}
 
         {/* Actions */}
-        <div className="flex flex-wrap items-center justify-between pt-4 border-t border-white/10 gap-3">
+        <div className="flex flex-wrap items-center justify-between pt-4 border-t border-white/10 dark:border-white/10 light:border-[#6dd7fd]/20 gap-3">
           {/* Image Upload */}
-          <label className="flex items-center gap-2 cursor-pointer px-4 py-2 rounded-lg bg-slate-700 hover:bg-slate-600 transition-colors">
-            <FaImage className="text-blue-400 text-lg" />
-            <span className="text-white text-sm font-medium">Photo</span>
+          <label className="
+            flex items-center gap-2 cursor-pointer px-4 py-2 rounded-lg 
+            bg-slate-700 dark:bg-slate-700 light:bg-[#bef0ff]/60
+            hover:bg-slate-600 dark:hover:bg-slate-600 light:hover:bg-[#6dd7fd]/40
+            transition-colors
+          ">
+            <FaImage className="text-blue-400 dark:text-blue-400 light:text-[#005acd] text-lg" />
+            <span className="text-white dark:text-white light:text-[#1e3a5f] text-sm font-medium">Photo</span>
             <Input
               onChange={handleImage}
               type="file"

@@ -6,7 +6,10 @@ import { quickLinks, resourceLinks } from "./footerData";
 
 const Footer = () => {
   return (
-    <footer className="relative bg-linear-to-r from-slate-900/95 via-slate-800/95 to-slate-900/95 backdrop-blur-xl border-t border-white/10 text-gray-300">
+    <footer
+      className="relative bg-slate-900/95 dark:bg-slate-900/95 light:bg-white/95 backdrop-blur-xl text-gray-300 dark:text-gray-300 light:text-[#3d5a80] border-t dark:border-white/10 light:border-[#6dd7fd]/30
+        shadow-lg  dark:shadow-blue-500/5 light:shadow-[#005acd]/10"
+    >
       {/* Decorative linear line */}
       <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-purple-500/50 to-transparent" />
 

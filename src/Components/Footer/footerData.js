@@ -1,18 +1,18 @@
 import {
   HiOutlineHome,
   HiOutlineUser,
-  HiOutlineGlobeAlt,
   HiOutlineChatBubbleLeftRight,
   HiOutlineQuestionMarkCircle,
   HiOutlineShieldCheck,
   HiOutlineDocumentText,
   HiOutlineEnvelope,
 } from "react-icons/hi2";
+import { IoSettingsOutline } from "react-icons/io5";
 
 export const quickLinks = [
   { to: "/", label: "Home", icon: HiOutlineHome },
   { to: "/profile", label: "Profile", icon: HiOutlineUser },
-  { to: "/", label: "Explore", icon: HiOutlineGlobeAlt },
+  { to: "/settings", label: "Settings", icon: IoSettingsOutline },
   { to: "/", label: "Messages", icon: HiOutlineChatBubbleLeftRight },
 ];
 

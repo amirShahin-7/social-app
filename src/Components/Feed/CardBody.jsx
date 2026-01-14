@@ -9,7 +9,9 @@ const CardBody = ({ postInfo }) => {
     <>
       {/* PostInfo Text */}
       <div className="px-5 pb-4">
-        <p className="text-slate-200 leading-relaxed">{postInfo.body}</p>
+        <p className="dark:text-slate-200 text-slate-800 leading-relaxed">
+          {postInfo.body}
+        </p>
       </div>
 
       {/* PostInfo Image */}

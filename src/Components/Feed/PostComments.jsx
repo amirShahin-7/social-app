@@ -14,13 +14,13 @@ const PostComments = ({ commentInfo }) => {
     >
       <Avatar src={userImage} size="sm" />
       <div className="flex-1">
-        <div className="bg-slate-800/50 backdrop-blur-sm rounded-2xl px-4 py-2.5 border border-white/10 flex justify-between">
+        <div className=" dark:bg-slate-800/50 bg-white/80 backdrop-blur-sm rounded-2xl px-4 py-2.5 border border-white/10 dark:border-white/10 light:border-[#6dd7fd]/30 flex justify-between">
           {/* Comment Content */}
           <div>
-            <p className="font-semibold text-sm text-white">
+            <p className="font-semibold text-sm theme-text-primary">
               {commentInfo?.commentCreator.name}
             </p>
-            <p className="text-slate-300 text-sm mt-0.5">
+            <p className="theme-text-secondary text-sm mt-0.5">
               {commentInfo?.content}
             </p>
           </div>
@@ -36,13 +36,13 @@ const PostComments = ({ commentInfo }) => {
           )}
         </div>
         <div className="flex items-center gap-4 mt-1.5 px-4 *:text-xs">
-          <button className="text-slate-400 hover:text-blue-500 focus:text-blue-500 font-medium cursor-pointer">
+          <button className=" dark:text-slate-400 text-[#5c7a99] hover:text-blue-500 focus:text-blue-500 font-medium cursor-pointer">
             Like
           </button>
-          <button className="text-slate-400 hover:text-red-500 focus:text-red-500 font-medium cursor-pointer">
+          <button className=" dark:text-slate-400 text-[#5c7a99] hover:text-red-500 focus:text-red-500 font-medium cursor-pointer">
             Reply
           </button>
-          <time className="text-slate-500">
+          <time className="theme-text-muted">
             {new Date(commentInfo?.createdAt).toLocaleTimeString("en-US", {
               hour: "numeric",
               minute: "2-digit",
