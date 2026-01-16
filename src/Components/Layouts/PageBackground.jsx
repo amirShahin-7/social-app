@@ -3,11 +3,11 @@ import { BsChatSquareHeart } from "react-icons/bs";
 const PageBackground = () => {
   return (
     <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
-      {/* Base Gradient - Dark Mode */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 dark:block hidden"></div>
+      {/* Base Linear - Dark Mode */}
+      <div className="absolute inset-0 bg-linear-to-br from-slate-900 via-slate-800 to-slate-900 dark:block hidden"></div>
 
-      {/* Base Gradient - Light Mode - Sky blue */}
-      <div className="absolute inset-0 bg-gradient-to-br from-sky-100 via-sky-200/80 to-cyan-100 block dark:hidden"></div>
+      {/* Base Linear - Light Mode - Sky blue */}
+      <div className="absolute inset-0 bg-linear-to-br from-sky-100 via-sky-200/80 to-cyan-100 block dark:hidden"></div>
 
       {/* Animated Background Elements - Dark Mode */}
       <div className="absolute inset-0 overflow-hidden hidden dark:block">
@@ -27,18 +27,42 @@ const PageBackground = () => {
 
       {/* Floating Social Icons Background - Dark Mode */}
       <div className="absolute inset-0 overflow-hidden opacity-10 hidden dark:block">
-        <BsChatSquareHeart className="absolute top-32 left-20 text-5xl text-blue-400 animate-bounce" style={{ animationDelay: '0s', animationDuration: '4s' }} />
-        <BsChatSquareHeart className="absolute top-60 right-24 text-3xl text-purple-400 animate-bounce" style={{ animationDelay: '1s', animationDuration: '3.5s' }} />
-        <BsChatSquareHeart className="absolute bottom-40 left-32 text-4xl text-cyan-400 animate-bounce" style={{ animationDelay: '2s', animationDuration: '4.2s' }} />
-        <BsChatSquareHeart className="absolute top-1/2 right-16 text-3xl text-pink-400 animate-bounce" style={{ animationDelay: '0.5s', animationDuration: '3.8s' }} />
+        <BsChatSquareHeart
+          className="absolute top-32 left-20 text-5xl text-blue-400 animate-bounce"
+          style={{ animationDelay: "0s", animationDuration: "4s" }}
+        />
+        <BsChatSquareHeart
+          className="absolute top-60 right-24 text-3xl text-purple-400 animate-bounce"
+          style={{ animationDelay: "1s", animationDuration: "3.5s" }}
+        />
+        <BsChatSquareHeart
+          className="absolute bottom-40 left-32 text-4xl text-cyan-400 animate-bounce"
+          style={{ animationDelay: "2s", animationDuration: "4.2s" }}
+        />
+        <BsChatSquareHeart
+          className="absolute top-1/2 right-16 text-3xl text-pink-400 animate-bounce"
+          style={{ animationDelay: "0.5s", animationDuration: "3.8s" }}
+        />
       </div>
 
       {/* Floating Social Icons Background - Light Mode */}
       <div className="absolute inset-0 overflow-hidden opacity-20 block dark:hidden">
-        <BsChatSquareHeart className="absolute top-32 left-20 text-5xl text-sky-500 animate-bounce" style={{ animationDelay: '0s', animationDuration: '4s' }} />
-        <BsChatSquareHeart className="absolute top-60 right-24 text-3xl text-cyan-500 animate-bounce" style={{ animationDelay: '1s', animationDuration: '3.5s' }} />
-        <BsChatSquareHeart className="absolute bottom-40 left-32 text-4xl text-sky-400 animate-bounce" style={{ animationDelay: '2s', animationDuration: '4.2s' }} />
-        <BsChatSquareHeart className="absolute top-1/2 right-16 text-3xl text-cyan-400 animate-bounce" style={{ animationDelay: '0.5s', animationDuration: '3.8s' }} />
+        <BsChatSquareHeart
+          className="absolute top-32 left-20 text-5xl text-sky-500 animate-bounce"
+          style={{ animationDelay: "0s", animationDuration: "4s" }}
+        />
+        <BsChatSquareHeart
+          className="absolute top-60 right-24 text-3xl text-cyan-500 animate-bounce"
+          style={{ animationDelay: "1s", animationDuration: "3.5s" }}
+        />
+        <BsChatSquareHeart
+          className="absolute bottom-40 left-32 text-4xl text-sky-400 animate-bounce"
+          style={{ animationDelay: "2s", animationDuration: "4.2s" }}
+        />
+        <BsChatSquareHeart
+          className="absolute top-1/2 right-16 text-3xl text-cyan-400 animate-bounce"
+          style={{ animationDelay: "0.5s", animationDuration: "3.8s" }}
+        />
       </div>
     </div>
   );

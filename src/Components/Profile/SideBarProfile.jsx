@@ -55,17 +55,21 @@ const SideBarProfile = () => {
     return (
       <aside className="w-full md:w-80 shrink-0">
         <div className="sticky top-24">
-          <div className="
-            bg-slate-800/60 dark:bg-slate-800/60 light:bg-white/80
+          <div
+            className="
+            bg-white/80 dark:bg-slate-800/60
             backdrop-blur-md 
-            border border-white/10 dark:border-white/10 light:border-[#6dd7fd]/30
+            border border-[#6dd7fd]/30 dark:border-white/10
             rounded-3xl shadow-xl overflow-hidden p-6 text-center
-          ">
+          "
+          >
             <div className="w-16 h-16 bg-red-500/10 rounded-full flex items-center justify-center mx-auto mb-4">
               <span className="text-2xl">⚠️</span>
             </div>
             <p className="text-red-400 font-medium">Failed to load profile</p>
-            <p className="text-slate-400 dark:text-slate-400 light:text-[#5c7a99] text-sm mt-1">{error?.message}</p>
+            <p className="text-[#5c7a99] dark:text-slate-400 text-sm mt-1">
+              {error?.message}
+            </p>
             <button
               onClick={() => refetch()}
               className="mt-4 px-4 py-2 bg-indigo-500 text-white rounded-lg text-sm hover:bg-indigo-600 transition-colors"
@@ -82,15 +86,17 @@ const SideBarProfile = () => {
     user && (
       <aside className="w-full md:w-80 shrink-0">
         <div className="sticky top-24">
-          <div className="
-            bg-slate-800/60 dark:bg-slate-800/60 light:bg-white/80
+          <div
+            className="
+            bg-white/80 dark:bg-slate-800/60
             backdrop-blur-md 
-            border border-white/10 dark:border-white/10 light:border-[#6dd7fd]/30
-            rounded-3xl shadow-xl dark:shadow-xl light:shadow-[#005acd]/10
+            border border-[#6dd7fd]/30 dark:border-white/10
+            rounded-3xl shadow-xl shadow-[#005acd]/10 dark:shadow-blue-500/5
             overflow-hidden
-          ">
+          "
+          >
             {/* Cover/Header Section */}
-            <div className="relative h-28 bg-linear-to-r from-indigo-500 via-purple-500 to-pink-500 dark:from-indigo-500 dark:via-purple-500 dark:to-pink-500 light:from-[#005acd] light:via-[#0093cb] light:to-[#6dd7fd]">
+            <div className="relative h-28 bg-linear-to-r from-[#005acd] via-[#0093cb] to-[#6dd7fd] dark:from-indigo-500 dark:via-purple-500 dark:to-pink-500">
               <div className="absolute inset-0 bg-black/10"></div>
               {/* Decorative circles */}
               <div className="absolute top-2 right-4 w-16 h-16 bg-white/10 rounded-full blur-xl"></div>
@@ -100,8 +106,8 @@ const SideBarProfile = () => {
             {/* Avatar Section */}
             <div className="relative px-5 pb-5">
               <div className="absolute -top-12 left-1/2 transform -translate-x-1/2">
-                <div className="p-1 bg-linear-to-r from-indigo-500 via-purple-500 to-pink-500 dark:from-indigo-500 dark:via-purple-500 dark:to-pink-500 light:from-[#005acd] light:via-[#0093cb] light:to-[#6dd7fd] rounded-full shadow-lg">
-                  <div className="p-1 bg-slate-800 dark:bg-slate-800 light:bg-white rounded-full">
+                <div className="p-1 bg-linear-to-r from-[#005acd] via-[#0093cb] to-[#6dd7fd] dark:from-indigo-500 dark:via-purple-500 dark:to-pink-500 rounded-full shadow-lg">
+                  <div className="p-1 bg-white dark:bg-slate-800 rounded-full">
                     <Avatar src={user.photo} className="w-20 h-20" isBordered />
                   </div>
                 </div>
@@ -109,110 +115,124 @@ const SideBarProfile = () => {
 
               {/* User Name & Email */}
               <div className="pt-12 text-center">
-                <h1 className="text-xl font-bold text-white dark:text-white light:text-[#1e3a5f] capitalize">
+                <h1 className="text-xl font-bold text-[#1e3a5f] dark:text-white capitalize">
                   {user.name}
                 </h1>
-                <p className="text-slate-400 dark:text-slate-400 light:text-[#5c7a99] mt-1 text-sm flex items-center justify-center gap-1">
+                <p className="text-[#5c7a99] dark:text-slate-400 mt-1 text-sm flex items-center justify-center gap-1">
                   <HiOutlineMail className="text-sm" />
                   {user.email}
                 </p>
               </div>
 
               {/* Stats Section */}
-              <div className="flex justify-center items-center gap-4 mt-4 py-3 border-y border-white/10 dark:border-white/10 light:border-[#6dd7fd]/30 *:text-center ">
+              <div className="flex justify-center items-center gap-4 mt-4 py-3 border-y border-[#6dd7fd]/30 dark:border-white/10 *:text-center ">
                 <div className="space-y-1.5 mt-1">
-                  <p className="font-bold text-purple-400 dark:text-purple-400 light:text-[#0093cb] capitalize">
+                  <p className="font-bold text-[#0093cb] dark:text-purple-400 capitalize">
                     {user.gender === "male" ? (
                       <FaMale size={20} />
                     ) : (
                       <FaFemale size={20} />
                     )}
                   </p>
-                  <p className="text-xs text-slate-400 dark:text-slate-400 light:text-[#5c7a99] capitalize">
+                  <p className="text-xs text-[#5c7a99] dark:text-slate-400 capitalize">
                     {user.gender}
                   </p>
                 </div>
                 <div>
-                  <p className="text-lg font-bold text-indigo-400 dark:text-indigo-400 light:text-[#005acd]">
+                  <p className="text-lg font-bold text-[#005acd] dark:text-indigo-400">
                     {calcAge(user.dateOfBirth)}
                   </p>
-                  <p className="text-xs text-slate-400 dark:text-slate-400 light:text-[#5c7a99]">Years Old</p>
+                  <p className="text-xs text-[#5c7a99] dark:text-slate-400">
+                    Years Old
+                  </p>
                 </div>
                 <div>
-                  <p className="text-lg font-bold text-indigo-400 dark:text-indigo-400 light:text-[#005acd]">
+                  <p className="text-lg font-bold text-[#005acd] dark:text-indigo-400">
                     {userPosts?.length ? userPosts?.length : 0}
                   </p>
-                  <p className="text-xs text-slate-400 dark:text-slate-400 light:text-[#5c7a99]">Posts</p>
+                  <p className="text-xs text-[#5c7a99] dark:text-slate-400">
+                    Posts
+                  </p>
                 </div>
                 <div>
-                  <p className="text-lg font-bold text-pink-400 dark:text-pink-400 light:text-[#0093cb]">
+                  <p className="text-lg font-bold text-[#0093cb] dark:text-pink-400">
                     {Math.floor(
                       (new Date() - new Date(user.createdAt)) /
-                      (1000 * 60 * 60 * 24)
+                        (1000 * 60 * 60 * 24)
                     )}
                   </p>
-                  <p className="text-xs text-slate-400 dark:text-slate-400 light:text-[#5c7a99]">Days</p>
+                  <p className="text-xs text-[#5c7a99] dark:text-slate-400">
+                    Days
+                  </p>
                 </div>
               </div>
 
               {/* Details Section */}
               <div className="mt-4 space-y-3">
-                <h2 className="text-sm font-semibold text-white dark:text-white light:text-[#1e3a5f] flex items-center gap-2">
-                  <span className="w-6 h-6 bg-indigo-500/20 dark:bg-indigo-500/20 light:bg-[#005acd]/20 rounded-lg flex items-center justify-center">
-                    <FaUser className="text-xs text-indigo-400 dark:text-indigo-400 light:text-[#005acd]" />
+                <h2 className="text-sm font-semibold text-[#1e3a5f] dark:text-white flex items-center gap-2">
+                  <span className="w-6 h-6 bg-[#005acd]/20 dark:bg-indigo-500/20 rounded-lg flex items-center justify-center">
+                    <FaUser className="text-xs text-[#005acd] dark:text-indigo-400" />
                   </span>
                   Profile Details
                 </h2>
 
-                <div className="bg-slate-700/30 dark:bg-slate-700/30 light:bg-[#bef0ff]/40 rounded-xl p-3 space-y-2">
+                <div className="bg-[#bef0ff]/40 dark:bg-slate-700/30 rounded-xl p-3 space-y-2">
                   {/* Date of Birth */}
-                  <div className="flex items-center justify-between py-1.5 px-2 bg-slate-800/50 dark:bg-slate-800/50 light:bg-white/60 rounded-lg">
+                  <div className="flex items-center justify-between py-1.5 px-2 bg-white/60 dark:bg-slate-800/50 rounded-lg">
                     <div className="flex items-center gap-2">
                       <span className="w-6 h-6 bg-purple-500/20 rounded-md flex items-center justify-center">
-                        <FaBirthdayCake className="text-xs text-purple-400 dark:text-purple-400 light:text-[#0093cb]" />
+                        <FaBirthdayCake className="text-xs text-[#0093cb] dark:text-purple-400" />
                       </span>
-                      <span className="text-slate-400 dark:text-slate-400 light:text-[#5c7a99] text-xs">Birthday</span>
+                      <span className="text-[#5c7a99] dark:text-slate-400 text-xs">
+                        Birthday
+                      </span>
                     </div>
-                    <span className="font-medium text-slate-200 dark:text-slate-200 light:text-[#1e3a5f] text-xs">
+                    <span className="font-medium text-[#1e3a5f] dark:text-slate-200 text-xs">
                       {formatDate(user.dateOfBirth)}
                     </span>
                   </div>
 
                   {/* Gender */}
-                  <div className="flex items-center justify-between py-1.5 px-2 bg-slate-800/50 dark:bg-slate-800/50 light:bg-white/60 rounded-lg">
+                  <div className="flex items-center justify-between py-1.5 px-2 bg-white/60 dark:bg-slate-800/50 rounded-lg">
                     <div className="flex items-center gap-2">
                       <span className="w-6 h-6 bg-blue-500/20 rounded-md flex items-center justify-center">
-                        <FaVenusMars className="text-xs text-blue-400 dark:text-blue-400 light:text-[#005acd]" />
+                        <FaVenusMars className="text-xs text-[#005acd] dark:text-blue-400" />
                       </span>
-                      <span className="text-slate-400 dark:text-slate-400 light:text-[#5c7a99] text-xs">Gender</span>
+                      <span className="text-[#5c7a99] dark:text-slate-400 text-xs">
+                        Gender
+                      </span>
                     </div>
-                    <span className="font-medium text-slate-200 dark:text-slate-200 light:text-[#1e3a5f] text-xs capitalize">
+                    <span className="font-medium text-[#1e3a5f] dark:text-slate-200 text-xs capitalize">
                       {user.gender}
                     </span>
                   </div>
 
                   {/* Member Since */}
-                  <div className="flex items-center justify-between py-1.5 px-2 bg-slate-800/50 dark:bg-slate-800/50 light:bg-white/60 rounded-lg">
+                  <div className="flex items-center justify-between py-1.5 px-2 bg-white/60 dark:bg-slate-800/50 rounded-lg">
                     <div className="flex items-center gap-2">
                       <span className="w-6 h-6 bg-green-500/20 rounded-md flex items-center justify-center">
                         <BsCalendarCheck className="text-xs text-green-400" />
                       </span>
-                      <span className="text-slate-400 dark:text-slate-400 light:text-[#5c7a99] text-xs">Joined</span>
+                      <span className="text-[#5c7a99] dark:text-slate-400 text-xs">
+                        Joined
+                      </span>
                     </div>
-                    <span className="font-medium text-slate-200 dark:text-slate-200 light:text-[#1e3a5f] text-xs">
+                    <span className="font-medium text-[#1e3a5f] dark:text-slate-200 text-xs">
                       {formatDate(user.createdAt)}
                     </span>
                   </div>
 
                   {/* User ID */}
-                  <div className="flex items-center justify-between py-1.5 px-2 bg-slate-800/50 dark:bg-slate-800/50 light:bg-white/60 rounded-lg">
+                  <div className="flex items-center justify-between py-1.5 px-2 bg-white/60 dark:bg-slate-800/50 rounded-lg">
                     <div className="flex items-center gap-2">
                       <span className="w-6 h-6 bg-orange-500/20 rounded-md flex items-center justify-center">
                         <FaIdCard className="text-xs text-orange-400" />
                       </span>
-                      <span className="text-slate-400 dark:text-slate-400 light:text-[#5c7a99] text-xs">User ID</span>
+                      <span className="text-[#5c7a99] dark:text-slate-400 text-xs">
+                        User ID
+                      </span>
                     </div>
-                    <span className="font-medium text-slate-500 dark:text-slate-500 light:text-[#5c7a99] text-[10px] font-mono">
+                    <span className="font-medium text-[#5c7a99] dark:text-slate-500 text-[10px] font-mono">
                       {user._id}
                     </span>
                   </div>
@@ -223,7 +243,10 @@ const SideBarProfile = () => {
               <div className="mt-4">
                 <Link
                   to="/settings"
-                  className="w-full py-2.5 px-4 bg-linear-to-r from-indigo-500 via-purple-500 to-pink-500 dark:from-indigo-500 dark:via-purple-500 dark:to-pink-500 light:from-[#005acd] light:via-[#0093cb] light:to-[#6dd7fd] text-white font-semibold text-sm rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer"
+                  className="w-full py-2.5 px-4 bg-linear-to-r from-[#005acd] via-[#0093cb] to-[#6dd7fd]
+                  dark:from-indigo-500 dark:via-purple-500 dark:to-pink-500
+                  text-white font-semibold text-sm rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200
+                  flex items-center justify-center gap-2 cursor-pointer"
                 >
                   <RiEdit2Fill />
                   Edit Profile

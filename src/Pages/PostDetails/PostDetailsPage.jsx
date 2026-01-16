@@ -32,16 +32,16 @@ const PostDetailsPage = () => {
         <main className="w-full max-w-2xl py-8 space-y-6">
           <div className="theme-card flex flex-wrap items-center justify-between shadow-lg p-6 my-6 rounded-2xl">
             <h2 className="text-xl font-bold theme-text-primary flex items-center gap-3">
-              <span className="w-10 h-10 bg-linear-to-r light:from-[#005acd] light:via-[#0093cb] light:to-[#005acd] dark:from-indigo-500 dark:to-purple-500 rounded-xl flex items-center justify-center shadow-lg shadow-indigo-500/20">
+              <span className="w-10 h-10 bg-linear-to-r from-[#005acd] via-[#0093cb] to-[#005acd] dark:from-indigo-500 dark:to-purple-500 rounded-xl flex items-center justify-center shadow-lg shadow-indigo-500/20">
                 <BsNewspaper className="text-lg text-white" />
               </span>
-              <span className="light:bg-linear-to-r light:from-[#005acd] light:via-[#0093cb] light:to-[#005acd] light:bg-clip-text light:text-transparent">
+              <span className="bg-linear-to-r from-[#005acd] via-[#0093cb] to-[#005acd] bg-clip-text text-transparent dark:text-white">
                 Posts Details
               </span>
             </h2>
             <button
               onClick={() => navigate(-1)}
-              className="border border-blue-400/50 rounded-full px-4 py-2 text-blue-400 hover:bg-slate-800/10 dark:hover:bg-slate-800/10 light:hover:bg-blue-400/10 hover:text-blue-500 transition-colors flex items-center gap-2 cursor-pointer"
+              className="border border-blue-400/50 rounded-full px-4 py-2 text-blue-400 hover:bg-blue-400/10 dark:hover:bg-slate-800/10 hover:text-blue-500 transition-colors flex items-center gap-2 cursor-pointer"
             >
               Back
             </button>

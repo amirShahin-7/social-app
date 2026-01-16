@@ -28,10 +28,10 @@ const HomePage = () => {
           <CreatePost />
 
           <div className="flex items-center gap-3 mt-8">
-            <h2 className="text-2xl font-bold bg-linear-to-r from-blue-400 via-blue-500 to-blue-600 dark:from-white dark:via-blue-100 dark:to-white bg-clip-text text-transparent">
+            <h2 className="text-2xl font-bold bg-linear-to-r from-[#005acd] via-[#0093cb] to-[#6dd7fd] dark:from-blue-600 dark:via-white/50 dark:to-white/20 bg-clip-text text-transparent">
               Latest Posts
             </h2>
-            <div className="flex-1 h-px bg-linear-to-r from-blue-500/50 via-purple-500/30 to-transparent"></div>
+            <div className="flex-1 h-px bg-linear-to-r from-[#0093cb]/50 via-purple-500/30 to-transparent"></div>
           </div>
 
           {/* Error State */}

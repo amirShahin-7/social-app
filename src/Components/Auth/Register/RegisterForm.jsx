@@ -66,16 +66,18 @@ const RegisterForm = () => {
 
   return (
     <>
-      <section className="bg-slate-800/60 backdrop-blur-md border border-white/10 lg:w-7/10 mx-auto p-8 rounded-3xl my-12 lg:my-0 shadow-2xl shadow-black/20">
+      <section className="theme-card lg:w-7/10 mx-auto p-8 rounded-3xl my-12 lg:my-0 shadow-2xl shadow-black/20">
         <div className=" text-center space-y-3 py-3">
-          <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-linear-to-br from-blue-500/20 via-purple-500/20 to-pink-500/20 mb-2 border border-white/5">
-            <HiOutlineSparkles className="text-2xl text-purple-400" />
+          <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-linear-to-br from-[#005acd] via-[#0093cb] to-[#6dd7fd] dark:from-blue-500/20 dark:via-purple-500/20 dark:to-pink-500/20 mb-2 border-[#6dd7fd]/30 dark:border-white/5 border">
+            <HiOutlineSparkles className="text-2xl text-[#005acd] dark:text-blue-400" />
           </div>
-          <h2 className="text-3xl font-bold text-white">Create Account</h2>
-          <span className="text-slate-400">
+          <h2 className="text-3xl font-bold theme-text-primary">
+            Create Account
+          </h2>
+          <span className="text-[#005acd] dark:text-blue-400">
             Already have an account?
             <Link
-              className="text-blue-400 ml-2 hover:text-blue-300 font-medium transition-colors"
+              className="text-[#0093cb] dark:text-blue-400 ml-2 hover:text-[#005acd] dark:hover:text-blue-300 font-medium transition-colors"
               to={"/auth/login"}
             >
               Sign in
@@ -101,9 +103,9 @@ const RegisterForm = () => {
 
         <div className="relative text-center my-8">
           <div className="absolute inset-0 flex items-center">
-            <div className="w-full border-t border-white/10"></div>
+            <div className="w-full border-t border-[#6dd7fd]/30 dark:border-white/10"></div>
           </div>
-          <span className="relative z-10 bg-slate-800/0 px-4 text-sm text-slate-500 font-medium ">
+          <span className="relative z-10 bg-white dark:bg-transparent px-4 text-sm text-[#5c7a99] dark:text-slate-500 font-medium ">
             or continue with email
           </span>
         </div>
@@ -122,15 +124,17 @@ const RegisterForm = () => {
             errorMessage={errors.name?.message}
             variant="bordered"
             placeholder="Enter your full name"
-            startContent={<FaUser className="text-slate-400" />}
+            startContent={
+              <FaUser className="text-[#5c7a99] dark:text-slate-400" />
+            }
             size="lg"
             color="white"
             classNames={{
-              label: "text-white/60 mb-2",
+              label: "text-[#3d5a80] dark:text-white/60 mb-2 font-medium",
               input:
-                "group-data-[has-value=true]:text-green-300 [&:-webkit-autofill]:[-webkit-text-fill-color:white]",
+                "text-[#1a2b3c] dark:text-white group-data-[has-value=true]:text-blue-600 dark:group-data-[has-value=true]:text-green-300 [&:-webkit-autofill]:[-webkit-text-fill-color:#1a2b3c] dark:[&:-webkit-autofill]:[-webkit-text-fill-color:white]",
               inputWrapper:
-                "bg-slate-900/50 border-white/10 data-[hover=true]:border-blue-500/50 group-data-[focus=true]:border-blue-500",
+                "bg-white/80 dark:bg-slate-900/50 border-[#6dd7fd]/30 dark:border-white/10 data-[hover=true]:border-[#0093cb]/50 dark:data-[hover=true]:border-blue-500/50 group-data-[focus=true]:border-[#005acd] dark:group-data-[focus=true]:border-blue-500",
               clearButton: "text-slate-500",
             }}
           />
@@ -144,15 +148,17 @@ const RegisterForm = () => {
             isClearable={true}
             variant="bordered"
             placeholder="name@example.com"
-            startContent={<IoIosMail className="text-slate-400 text-xl" />}
+            startContent={
+              <IoIosMail className="text-[#5c7a99] dark:text-slate-400 text-xl" />
+            }
             size="lg"
             color="white"
             classNames={{
-              label: "text-white/60 mb-2",
+              label: "text-[#3d5a80] dark:text-white/60 mb-2 font-medium",
               input:
-                "group-data-[has-value=true]:text-green-300 [&:-webkit-autofill]:[-webkit-text-fill-color:white]",
+                "text-[#1a2b3c] dark:text-white group-data-[has-value=true]:text-blue-600 dark:group-data-[has-value=true]:text-green-300 [&:-webkit-autofill]:[-webkit-text-fill-color:#1a2b3c] dark:[&:-webkit-autofill]:[-webkit-text-fill-color:white]",
               inputWrapper:
-                "bg-slate-900/50 border-white/10 data-[hover=true]:border-blue-500/50 group-data-[focus=true]:border-blue-500",
+                "bg-white/80 dark:bg-slate-900/50 border-[#6dd7fd]/30 dark:border-white/10 data-[hover=true]:border-[#0093cb]/50 dark:data-[hover=true]:border-blue-500/50 group-data-[focus=true]:border-[#005acd] dark:group-data-[focus=true]:border-blue-500",
               clearButton: "text-slate-500",
             }}
           />
@@ -167,28 +173,30 @@ const RegisterForm = () => {
               errorMessage={errors.password?.message}
               variant="bordered"
               placeholder="Create password"
-              startContent={<FaLock className="text-slate-400" />}
+              startContent={
+                <FaLock className="text-[#5c7a99] dark:text-slate-400" />
+              }
               color="white"
               endContent={
                 showPass ? (
                   <FaEye
                     onClick={() => setShowPass(!showPass)}
-                    className="text-slate-400 cursor-pointer hover:text-white"
+                    className="text-[#5c7a99] dark:text-slate-400 cursor-pointer hover:text-[#005acd] dark:hover:text-white"
                   />
                 ) : (
                   <FaEyeSlash
                     onClick={() => setShowPass(!showPass)}
-                    className="text-slate-400 cursor-pointer hover:text-white"
+                    className="text-[#5c7a99] dark:text-slate-400 cursor-pointer hover:text-[#005acd] dark:hover:text-white"
                   />
                 )
               }
               size="lg"
               classNames={{
-                label: "text-white/60 mb-2",
+                label: "text-[#3d5a80] dark:text-white/60 mb-2 font-medium",
                 input:
-                  "group-data-[has-value=true]:text-green-300 [&:-webkit-autofill]:[-webkit-text-fill-color:white]",
+                  "text-[#1a2b3c] dark:text-white group-data-[has-value=true]:text-blue-600 dark:group-data-[has-value=true]:text-green-300 [&:-webkit-autofill]:[-webkit-text-fill-color:#1a2b3c] dark:[&:-webkit-autofill]:[-webkit-text-fill-color:white]",
                 inputWrapper:
-                  "bg-slate-900/50 border-white/10 data-[hover=true]:border-blue-500/50 group-data-[focus=true]:border-blue-500",
+                  "bg-white/80 dark:bg-slate-900/50 border-[#6dd7fd]/30 dark:border-white/10 data-[hover=true]:border-[#0093cb]/50 dark:data-[hover=true]:border-blue-500/50 group-data-[focus=true]:border-[#005acd] dark:group-data-[focus=true]:border-blue-500",
               }}
             />
             <Input
@@ -204,11 +212,11 @@ const RegisterForm = () => {
               description={
                 rePassword && !errors.rePassword ? (
                   passwordsMatch ? (
-                    <span className="text-green-300 text-xs flex items-center gap-1 mt-1">
+                    <span className="text-green-600 dark:text-green-300 text-xs flex items-center gap-1 mt-1 font-medium">
                       ✓ Match
                     </span>
                   ) : (
-                    <span className="text-red-500 text-xs flex items-center gap-1 mt-1">
+                    <span className="text-red-600 dark:text-red-500 text-xs flex items-center gap-1 mt-1 font-medium">
                       ⚠ No match
                     </span>
                   )
@@ -219,25 +227,28 @@ const RegisterForm = () => {
                 showRePass ? (
                   <FaEye
                     onClick={() => setShowRePass(!showRePass)}
-                    className="text-slate-400 cursor-pointer hover:text-white"
+                    className="text-[#5c7a99] dark:text-slate-400 cursor-pointer hover:text-[#005acd] dark:hover:text-white"
                   />
                 ) : (
                   <FaEyeSlash
                     onClick={() => setShowRePass(!showRePass)}
-                    className="text-slate-400 cursor-pointer hover:text-white"
+                    className="text-[#5c7a99] dark:text-slate-400 cursor-pointer hover:text-[#005acd] dark:hover:text-white"
                   />
                 )
               }
               variant="bordered"
               placeholder="Confirm password"
-              startContent={<FaLock className="text-slate-400" />}
+              startContent={
+                <FaLock className="text-[#5c7a99] dark:text-slate-400" />
+              }
               size="lg"
               color="white"
               classNames={{
-                label: "text-white/60 mb-2",
-                input: "text-white group-data-[has-value=true]:text-green-300",
+                label: "text-[#3d5a80] dark:text-white/60 mb-2 font-medium",
+                input:
+                  "text-[#1a2b3c] dark:text-white group-data-[has-value=true]:text-blue-600 dark:group-data-[has-value=true]:text-green-300",
                 inputWrapper:
-                  "bg-slate-900/50 border-white/10 data-[hover=true]:border-blue-500/50 group-data-[focus=true]:border-blue-500",
+                  "bg-white/80 dark:bg-slate-900/50 border-[#6dd7fd]/30 dark:border-white/10 data-[hover=true]:border-[#0093cb]/50 dark:data-[hover=true]:border-blue-500/50 group-data-[focus=true]:border-[#005acd] dark:group-data-[focus=true]:border-blue-500",
               }}
             />
           </div>
@@ -255,16 +266,18 @@ const RegisterForm = () => {
               isInvalid={!!errors.dateOfBirth}
               errorMessage={errors.dateOfBirth?.message}
               variant="bordered"
-              startContent={<FaBirthdayCake className="text-slate-400" />}
+              startContent={
+                <FaBirthdayCake className="text-[#5c7a99] dark:text-slate-400" />
+              }
               size="lg"
               color="white"
               isClearable={true}
               className="flex-1"
               classNames={{
-                label: "text-white/60 mb-2",
-                input: `text-white/60`,
+                label: "text-[#3d5a80] dark:text-white/60 mb-2 font-medium",
+                input: "text-[#1a2b3c]/60 dark:text-white/60",
                 inputWrapper:
-                  "bg-slate-900/50 border-white/10 data-[hover=true]:border-blue-500/50 group-data-[focus=true]:border-blue-500",
+                  "bg-white/80 dark:bg-slate-900/50 border-[#6dd7fd]/30 dark:border-white/10 data-[hover=true]:border-[#0093cb]/50 dark:data-[hover=true]:border-blue-500/50 group-data-[focus=true]:border-[#005acd] dark:group-data-[focus=true]:border-blue-500",
                 clearButton: "text-slate-500",
               }}
             />
@@ -277,31 +290,33 @@ const RegisterForm = () => {
               variant="bordered"
               labelPlacement="outside"
               placeholder="Select gender"
-              startContent={<FaVenusMars className="text-slate-400 text-lg" />}
+              startContent={
+                <FaVenusMars className="text-[#5c7a99] dark:text-slate-400 text-lg" />
+              }
               size="lg"
               color="white"
               isClearable={true}
               className="flex-1"
               classNames={{
-                label: "text-white/60 mb-2",
+                label: "text-[#3d5a80] dark:text-white/60 mb-2 font-medium",
                 value:
-                  "text-white/60 group-data-[has-value=true]:text-green-300",
+                  "text-[#1a2b3c]/60 dark:text-white/60 group-data-[has-value=true]:text-blue-600 dark:group-data-[has-value=true]:text-green-300",
                 trigger:
-                  "bg-slate-900/50 border-white/10 data-[hover=true]:border-blue-500/50 group-data-[focus=true]:border-blue-500",
+                  "bg-white/80 dark:bg-slate-900/50 border-[#6dd7fd]/30 dark:border-white/10 data-[hover=true]:border-[#0093cb]/50 dark:data-[hover=true]:border-blue-500/50 group-data-[focus=true]:border-[#005acd] dark:group-data-[focus=true]:border-blue-500",
                 popoverContent:
-                  "bg-slate-800 border border-white/10 text-white",
+                  "bg-white dark:bg-slate-800 border border-[#6dd7fd]/30 dark:border-white/10 text-[#1a2b3c] dark:text-white",
                 clearButton: "text-slate-500",
               }}
             >
               <SelectItem
                 key={"male"}
-                className="text-slate-400 data-[hover=true]:bg-slate-700 data-[hover=true]:text-white"
+                className="text-[#5c7a99] dark:text-slate-400 data-[hover=true]:bg-blue-50 dark:data-[hover=true]:bg-slate-700 data-[hover=true]:text-[#005acd] dark:data-[hover=true]:text-white"
               >
                 Male
               </SelectItem>
               <SelectItem
                 key={"female"}
-                className="text-slate-400 data-[hover=true]:bg-slate-700 data-[hover=true]:text-white"
+                className="text-[#5c7a99] dark:text-slate-400 data-[hover=true]:bg-blue-50 dark:data-[hover=true]:bg-slate-700 data-[hover=true]:text-[#005acd] dark:data-[hover=true]:text-white"
               >
                 Female
               </SelectItem>
@@ -309,7 +324,7 @@ const RegisterForm = () => {
           </div>
           <Button
             type="submit"
-            className="w-full bg-linear-to-r from-blue-500 via-purple-500 to-pink-500 text-white font-bold text-lg  hover:scale-[1.02] transition-all py-6 mt-4 disabled:opacity-30"
+            className="w-full bg-linear-to-r from-[#005acd] via-[#0093cb] to-[#6dd7fd] dark:from-blue-500 dark:via-purple-500 dark:to-pink-500 text-white font-bold text-lg hover:scale-[1.02] transition-all py-6 mt-4 disabled:opacity-30 disabled:cursor-not-allowed shadow-lg shadow-[#005acd]/20 dark:shadow-blue-500/20"
             size="lg"
             disabled={isLoading || !isValid || !passwordsMatch}
             isLoading={isLoading}

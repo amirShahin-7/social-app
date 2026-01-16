@@ -14,7 +14,7 @@ const PostComments = ({ commentInfo }) => {
     >
       <Avatar src={userImage} size="sm" />
       <div className="flex-1">
-        <div className=" dark:bg-slate-800/50 bg-white/80 backdrop-blur-sm rounded-2xl px-4 py-2.5 border border-white/10 dark:border-white/10 light:border-[#6dd7fd]/30 flex justify-between">
+        <div className="bg-white/80 dark:bg-slate-800/50 backdrop-blur-sm rounded-2xl px-4 py-2.5 border border-[#6dd7fd]/30 dark:border-white/10 flex justify-between">
           {/* Comment Content */}
           <div>
             <p className="font-semibold text-sm theme-text-primary">

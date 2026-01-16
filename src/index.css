@@ -2,30 +2,12 @@
 @plugin './hero.js';
 @source '../node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}';
 @custom-variant dark (&:is(.dark *));
-@custom-variant light (&:not(.dark *));
 
 /* ========================================
    Theme Color Variables
    ======================================== */
 
 :root {
-  /* Light Theme Colors - Blue Palette */
-  --color-primary-50: #f5ffff;
-  --color-primary-100: #bef0ff;
-  --color-primary-200: #6dd7fd;
-  --color-primary-300: #0093cb;
-  --color-primary-400: #007ab8;
-  --color-primary-500: #005acd;
-  --color-primary-600: #004bb0;
-  --color-primary-700: #003d93;
-
-  /* Light Theme Surface Colors */
-  --color-surface-50: #f5ffff;
-  --color-surface-100: #e8fafe;
-  --color-surface-200: #d1f4fc;
-  --color-surface-300: #bef0ff;
-  --color-surface-400: #a8e8fc;
-
   /* Light Theme Text Colors */
   --color-text-primary: #1e3a5f;
   --color-text-secondary: #3d5a80;
@@ -45,23 +27,6 @@
 }
 
 .dark {
-  /* Dark Theme Colors - Slate Palette (existing) */
-  --color-primary-50: #f8fafc;
-  --color-primary-100: #f1f5f9;
-  --color-primary-200: #e2e8f0;
-  --color-primary-300: #cbd5e1;
-  --color-primary-400: #94a3b8;
-  --color-primary-500: #64748b;
-  --color-primary-600: #475569;
-  --color-primary-700: #334155;
-
-  /* Dark Theme Surface Colors */
-  --color-surface-50: #0f172a;
-  --color-surface-100: #1e293b;
-  --color-surface-200: #334155;
-  --color-surface-300: #475569;
-  --color-surface-400: #64748b;
-
   /* Dark Theme Text Colors */
   --color-text-primary: #f8fafc;
   --color-text-secondary: #e2e8f0;
@@ -115,17 +80,4 @@ body {
 
 .theme-text-muted {
   color: var(--color-text-muted);
-}
-
-/* Glassmorphic Button Base */
-.theme-btn-glass {
-  background: var(--color-bg-card);
-  border: 1px solid var(--color-border);
-  backdrop-filter: blur(8px);
-  transition: all 0.2s ease;
-}
-
-.theme-btn-glass:hover {
-  background: var(--color-bg-card-hover);
-  border-color: var(--color-border-hover);
 }

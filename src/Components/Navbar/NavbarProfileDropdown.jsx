@@ -18,25 +18,27 @@ const NavbarProfileDropdown = ({ userData, onLogout }) => {
             isBordered
             as="button"
             className="transition-all duration-300 ring-2 ring-offset-2 
-              ring-offset-slate-900 dark:ring-offset-slate-900 light:ring-offset-white
-              ring-purple-500/50 dark:ring-purple-500/50 light:ring-[#005acd]/50
-              group-hover:ring-purple-400 dark:group-hover:ring-purple-400 light:group-hover:ring-[#005acd]
+              ring-offset-white dark:ring-offset-slate-900
+              ring-[#005acd]/50 dark:ring-purple-500/50
+              group-hover:ring-[#005acd] dark:group-hover:ring-purple-400
               group-hover:scale-105 cursor-pointer"
             color="secondary"
             size="md"
             radius="full"
             src={userData?.photo}
-            fallback={<HiOutlineUser className="text-xl text-slate-400 dark:text-slate-400 light:text-[#3d5a80]" />}
+            fallback={
+              <HiOutlineUser className="text-xl text-[#3d5a80] dark:text-slate-400" />
+            }
           />
-          <div className="absolute bottom-0 right-0 w-3 h-3 bg-green-400 rounded-full border-2 border-slate-900 dark:border-slate-900 light:border-white" />
+          <div className="absolute bottom-0 right-0 w-3 h-3 bg-green-400 rounded-full border-2 border-white dark:border-slate-900" />
         </div>
       </DropdownTrigger>
       <DropdownMenu
         aria-label="Profile Actions"
         className="w-56 p-2 
-          bg-slate-800/95 dark:bg-slate-800/95 light:bg-white/95
+          bg-white/95 dark:bg-slate-800/95
           backdrop-blur-xl 
-          border border-white/10 dark:border-white/10 light:border-[#6dd7fd]/30
+          border border-[#6dd7fd]/30 dark:border-white/10
           rounded-xl shadow-xl"
       >
         <DropdownItem
@@ -48,13 +50,13 @@ const NavbarProfileDropdown = ({ userData, onLogout }) => {
             <Avatar
               size="sm"
               src={userData?.photo}
-              className="ring-2 ring-purple-500/30 dark:ring-purple-500/30 light:ring-[#005acd]/30"
+              className="ring-2 ring-[#005acd]/30 dark:ring-purple-500/30"
             />
             <div className="flex flex-col">
-              <span className="text-sm font-semibold text-white dark:text-white light:text-[#1e3a5f]">
+              <span className="text-sm font-semibold text-[#1e3a5f] dark:text-white">
                 {userData?.name || "User"}
               </span>
-              <span className="text-xs text-slate-400 dark:text-slate-400 light:text-[#5c7a99]">
+              <span className="text-xs text-[#5c7a99] dark:text-slate-400">
                 {userData?.email || "user"}
               </span>
             </div>
@@ -64,8 +66,10 @@ const NavbarProfileDropdown = ({ userData, onLogout }) => {
         <DropdownItem
           key="profile"
           textValue="profile"
-          startContent={<HiOutlineUser className="text-lg text-blue-400 dark:text-blue-400 light:text-[#005acd]" />}
-          className="py-3 text-slate-200 dark:text-slate-200 light:text-[#1e3a5f] hover:bg-white/10 dark:hover:bg-white/10 light:hover:bg-[#bef0ff]/50 rounded-lg transition-colors"
+          startContent={
+            <HiOutlineUser className="text-lg text-[#005acd] dark:text-blue-400" />
+          }
+          className="py-3 text-[#1e3a5f] dark:text-slate-200 hover:bg-[#bef0ff]/50 dark:hover:bg-white/10 rounded-lg transition-colors"
         >
           <Link to="/profile" className="block w-full">
             My Profile
@@ -75,8 +79,10 @@ const NavbarProfileDropdown = ({ userData, onLogout }) => {
         <DropdownItem
           key="settings"
           textValue="settings"
-          startContent={<IoSettingsOutline className="text-lg text-gray-500 dark:text-gray-500 light:text-[#5c7a99]" />}
-          className="py-3 text-slate-200 dark:text-slate-200 light:text-[#1e3a5f] hover:bg-white/10 dark:hover:bg-white/10 light:hover:bg-[#bef0ff]/50 rounded-lg transition-colors"
+          startContent={
+            <IoSettingsOutline className="text-lg text-[#5c7a99] dark:text-gray-500" />
+          }
+          className="py-3 text-[#1e3a5f] dark:text-slate-200 hover:bg-[#bef0ff]/50 dark:hover:bg-white/10 rounded-lg transition-colors"
         >
           <Link to="/settings" className="block w-full">
             Settings

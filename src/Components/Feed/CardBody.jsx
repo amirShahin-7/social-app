@@ -20,7 +20,7 @@ const CardBody = ({ postInfo }) => {
           <img
             src={postInfo.image}
             alt="Post content"
-            className={`w-full    object-cover ${!id ? "h-96" : "h-full"}`}
+            className={`w-full object-cover ${!id ? "h-96" : "h-full"}`}
           />
         </Link>
       )}

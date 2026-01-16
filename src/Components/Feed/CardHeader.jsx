@@ -15,7 +15,9 @@ const CardHeader = ({ postInfo }) => {
         <div className="flex items-center gap-3">
           <Avatar src={postInfo?.user?.photo} size="md" />
           <div className="flex-1">
-            <h3 className="font-semibold text-white light:bg-linear-to-r light:from-[#005acd] light:via-[#0093cb] light:to-[#005acd] light:bg-clip-text light:text-transparent">{postInfo?.user?.name}</h3>
+            <h3 className="font-semibold bg-linear-to-r from-[#005acd] via-[#0093cb] to-[#005acd] bg-clip-text text-transparent dark:text-white">
+              {postInfo?.user?.name}
+            </h3>
             <time className="text-sm text-slate-500">
               {new Date(postInfo?.createdAt)
                 .toLocaleTimeString("en-US", {

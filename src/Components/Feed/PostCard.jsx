@@ -10,8 +10,8 @@ const PostCard = ({ postInfo }) => {
   return (
     <article
       key={postInfo?._id}
-      className=" dark:bg-slate-800/60 bg-white/80 backdrop-blur-md rounded-2xl 
-        border dark:border-white/10 border-[#6dd7fd]/30  shadow-lg dark:shadow-lg shadow-[#005acd]/10 overflow-hidden"
+      className="bg-white/80 dark:bg-slate-800/60 backdrop-blur-md rounded-2xl 
+        border border-[#6dd7fd]/30 dark:border-white/10 shadow-lg shadow-[#005acd]/10 dark:shadow-blue-500/5 overflow-hidden"
     >
       {/* Post Header */}
       <CardHeader postInfo={postInfo} />
@@ -21,7 +21,7 @@ const PostCard = ({ postInfo }) => {
       <CardBody postInfo={postInfo} />
 
       {/* Post Comments */}
-      <section className="p-5 space-y-4  dark:bg-slate-900/30 bg-[#f5ffff]/50">
+      <section className="p-5 space-y-4 bg-[#f5ffff]/50 dark:bg-slate-900/30">
         {postInfo?.comments ? (
           postInfo?.comments
             .slice(!id ? -2 : 0, postInfo?.comments?.length)
@@ -29,7 +29,7 @@ const PostCard = ({ postInfo }) => {
               <PostComments commentInfo={comment} key={comment?._id} />
             ))
         ) : (
-          <p className=" dark:text-slate-400 text-[#3d5a80] text-lg text-center">
+          <p className="text-[#3d5a80] dark:text-slate-400 text-lg text-center">
             No Comment Yet, Be the first comment
           </p>
         )}

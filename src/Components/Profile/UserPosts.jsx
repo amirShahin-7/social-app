@@ -11,7 +11,7 @@ const UserPosts = () => {
 
   if (posts?.length == 0) {
     return (
-      <div className="dark:bg-slate-800/60 bg-white/30 backdrop-blur-md rounded-2xl shadow-lg p-8 text-center border border-white/10">
+      <div className="bg-white/30 dark:bg-slate-800/60 backdrop-blur-md rounded-2xl shadow-lg p-8 text-center border border-[#6dd7fd]/30 dark:border-white/10">
         <div className="w-16 h-16 dark:bg-slate-700/50 bg-white/40 rounded-full flex items-center justify-center mx-auto mb-4">
           <BsArchive className="text-2xl text-slate-400 " />
         </div>

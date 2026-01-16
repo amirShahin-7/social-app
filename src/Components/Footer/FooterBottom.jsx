@@ -10,7 +10,7 @@ const FooterBottom = () => {
           <div className="w-full h-px bg-linear-to-r from-blue-500/50 via-purple-500/30 to-transparent" />
         </div>
         <div className="relative flex justify-center">
-          <div className="px-4 bg-slate-900 dark:bg-slate-900 light:bg-gray-200">
+          <div className="px-4 bg-gray-200 dark:bg-slate-900">
             <div className="w-2 h-2 bg-linear-to-r from-blue-500 to-purple-500 rounded-full" />
           </div>
         </div>

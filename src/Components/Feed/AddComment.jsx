@@ -40,8 +40,9 @@ const AddComment = ({ postId }) => {
           size="md"
           color="primary"
           classNames={{
-            inputWrapper: "rounded-full bg-slate-800/80 dark:bg-slate-800/80 light:bg-white border-white/10 dark:border-white/10 light:border-[#6dd7fd]/30 data-[hover=true]:bg-slate-700 dark:data-[hover=true]:bg-slate-700 light:data-[hover=true]:bg-white",
-            input: "theme-text-primary"
+            inputWrapper:
+              "rounded-full  dark:bg-slate-800/80 bg-white dark:border-white/10 border-[#6dd7fd]/30 dark:data-[hover=true]:bg-slate-700 data-[hover=true]:bg-white",
+            input: "theme-text-primary",
           }}
           onChange={(e) => setComment(e.target.value)}
           value={comment}

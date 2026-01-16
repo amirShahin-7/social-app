@@ -26,7 +26,8 @@ const socialLinks = [
   {
     icon: FaGithub,
     label: "GitHub",
-    hoverColor: "hover:text-white dark:hover:text-white light:hover:text-black hover:shadow-white/30 dark:hover:shadow-white/30 light:hover:shadow-black/30",
+    hoverColor:
+      "hover:text-[#1a2b3c] dark:hover:text-white hover:shadow-black/30 dark:hover:shadow-white/30",
   },
 ];
 
@@ -44,8 +45,8 @@ const FooterSocial = () => {
         {socialLinks.map((social) => (
           <Link
             key={social.label}
-            to={'/'}
-            className={`w-10 h-10 flex items-center justify-center rounded-lg bg-white/5 dark:bg-white/5 light:bg-white border border-white/10 dark:border-white/10 light:border-[#6dd7fd]/30 theme-text-secondary transition-all duration-300 hover:scale-110 hover:shadow-lg ${social.hoverColor}`}
+            to={"/"}
+            className={`w-10 h-10 flex items-center justify-center rounded-lg bg-white dark:bg-white/5 border border-[#6dd7fd]/30 dark:border-white/10 theme-text-secondary transition-all duration-300 hover:scale-110 hover:shadow-lg ${social.hoverColor}`}
             aria-label={social.label}
           >
             <social.icon size={18} />
@@ -55,10 +56,10 @@ const FooterSocial = () => {
 
       {/* App Store Badges */}
       <div className="mt-6 flex gap-2">
-        <div className="px-3 py-2 bg-white/5 dark:bg-white/5 light:bg-white border border-white/10 dark:border-white/10 light:border-[#6dd7fd]/30 rounded-lg text-xs theme-text-secondary hover:bg-white/10 dark:hover:bg-white/10 light:hover:bg-blue-400/10 transition-colors cursor-pointer">
+        <div className="px-3 py-2 bg-white dark:bg-white/5 border border-[#6dd7fd]/30 dark:border-white/10 rounded-lg text-xs theme-text-secondary hover:bg-blue-400/10 dark:hover:bg-white/10 transition-colors cursor-pointer">
           📱 App Store
         </div>
-        <div className="px-3 py-2 bg-white/5 dark:bg-white/5 light:bg-white border border-white/10 dark:border-white/10 light:border-[#6dd7fd]/30 rounded-lg text-xs theme-text-secondary hover:bg-white/10 dark:hover:bg-white/10 light:hover:bg-blue-400/10 transition-colors cursor-pointer">
+        <div className="px-3 py-2 bg-white dark:bg-white/5 border border-[#6dd7fd]/30 dark:border-white/10 rounded-lg text-xs theme-text-secondary hover:bg-blue-400/10 dark:hover:bg-white/10 transition-colors cursor-pointer">
           🤖 Play Store
         </div>
       </div>

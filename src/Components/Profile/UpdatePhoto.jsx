@@ -38,7 +38,7 @@ const UpdatePhoto = () => {
 
   return (
     <div className="theme-card rounded-3xl shadow-xl overflow-hidden p-6 w-full">
-      <h3 className="text-xl font-semibold theme-text-primary mb-6 border-b border-white/10 pb-4 light:bg-linear-to-r light:from-[#005acd] light:via-[#0093cb] light:to-[#005acd] light:bg-clip-text light:text-transparent">
+      <h3 className="text-xl font-semibold  mb-6 border-b border-white/10 pb-4 bg-linear-to-r from-[#005acd] via-[#0093cb] to-[#005acd] bg-clip-text text-transparent dark:text-white">
         Profile Photo
       </h3>
 
@@ -59,9 +59,11 @@ const UpdatePhoto = () => {
         </div>
 
         <div className="flex flex-col items-center gap-4 w-full max-w-xs">
-          <label className="w-full flex items-center justify-center gap-2 cursor-pointer px-6 py-3 rounded-xl bg-slate-700/50 dark:bg-slate-700/50 light:bg-white border border-white/5 dark:border-white/5 light:border-[#6dd7fd]/30 hover:border-blue-500/30 transition-all duration-300 group">
+          <label className="w-full flex items-center justify-center gap-2 cursor-pointer px-6 py-3 rounded-xl bg-white dark:bg-slate-700/50 border border-[#6dd7fd]/30 dark:border-white/5 hover:border-blue-500/30 transition-all duration-300 group">
             <FaImage className="text-blue-400 group-hover:scale-110 transition-transform" />
-            <span className="theme-text-secondary font-medium light:bg-linear-to-r light:from-[#005acd] light:via-[#0093cb] light:to-[#005acd] light:bg-clip-text light:text-transparent">Choose Image</span>
+            <span className="font-medium bg-linear-to-r from-[#005acd] via-[#0093cb] to-[#005acd] bg-clip-text text-transparent dark:text-white">
+              Choose Image
+            </span>
             <input
               onChange={handleImage}
               type="file"
